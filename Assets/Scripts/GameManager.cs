@@ -11,8 +11,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject[] objectsToActivate;
 
+<<<<<<< Updated upstream
     public Sprite defaultSprite;  
     public Sprite selectedSprite; 
+=======
+    [SerializeField] public GameObject derrotapanel;
+>>>>>>> Stashed changes
 
     void Start()
     {
@@ -86,7 +90,7 @@ public class GameManager : MonoBehaviour
 
         if (buttonIndex - 1 < objectsToActivate.Length)
         {
-            objectsToActivate[buttonIndex - 1].SetActive(true); 
+            objectsToActivate[buttonIndex - 1].SetActive(true);
         }
         else
         {
@@ -99,9 +103,21 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void QuitGame() 
+    public void QuitGame()
     {
         Debug.Log("El juego se ha cerrado.");
         Application.Quit();
+    }
+
+    public void Reintentar()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Nivel1");
+    }
+
+    public void VolverMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MenuInicial");
     }
 }

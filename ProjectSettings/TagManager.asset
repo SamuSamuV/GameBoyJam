@@ -13,6 +13,11 @@ TagManager:
   - LinternaArriba
   - LinternaAbajo
   - LinternaIzquierda
+  - BichoMalo
+  - GM
+  - FantasmaPapelSup
+  - FantasmaPapelInf
+  - FantasmaPapelIzq
   layers:
   - Default
   - TransparentFX
