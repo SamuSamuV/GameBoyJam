@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject[] objectsToActivate;
 
+    public Sprite defaultSprite;  
+    public Sprite selectedSprite; 
+
     void Start()
     {
         SelectButton(selectedButtonIndex);
@@ -40,14 +43,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void SelectButton(int index) //esto tendré que veré como cambiar entre sprites cuando haya arte
+    void SelectButton(int index) 
     {
         foreach (var button in buttons)
         {
-            button.GetComponent<Image>().color = Color.white;
+            button.GetComponent<Image>().sprite = defaultSprite;
         }
 
-        buttons[index].GetComponent<Image>().color = Color.green;
+        buttons[index].GetComponent<Image>().sprite = selectedSprite; 
     }
 
     void LoadSceneFromSelectedButton()
