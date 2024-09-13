@@ -9,6 +9,10 @@ TagManager:
   - FantasmaPiedra
   - FantasmaTijera
   - FantasmaPapel
+  - LinternaDerecha
+  - LinternaArriba
+  - LinternaAbajo
+  - LinternaIzquierda
   layers:
   - Default
   - TransparentFX

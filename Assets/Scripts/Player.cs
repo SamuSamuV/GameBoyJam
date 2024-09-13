@@ -9,16 +9,25 @@ public class Player : MonoBehaviour
     public bool seEnfocoFantasmaTijera = false;
     public bool seEnfocoFantasmaPapel = false;
 
-    [SerializeField] GameObject pivotLinterna;
-    [SerializeField] GameObject linterna;
+    [SerializeField] GameObject linternaDerecha;
+    [SerializeField] GameObject linternaArriba;
+    [SerializeField] GameObject linternaAbajo;
+    [SerializeField] GameObject linternaIzquierda;
     [SerializeField] GameObject fantasmaPiedra;
     [SerializeField] GameObject fantasmaTijera;
     [SerializeField] GameObject fantasmaPapel;
 
     void Start()
     {
-        pivotLinterna = GameObject.FindGameObjectWithTag("PivotLinterna");
-        linterna = GameObject.FindGameObjectWithTag("Linterna");
+        linternaDerecha = GameObject.FindGameObjectWithTag("LinternaDerecha");
+        linternaArriba = GameObject.FindGameObjectWithTag("LinternaArriba");
+        linternaAbajo = GameObject.FindGameObjectWithTag("LinternaAbajo");
+        linternaIzquierda = GameObject.FindGameObjectWithTag("LinternaIzquierda");
+
+        linternaDerecha.SetActive(false);
+        linternaArriba.SetActive(false);
+        linternaAbajo.SetActive(false);
+        linternaIzquierda.SetActive(false);
     }
 
     void Update()
@@ -55,19 +64,34 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            pivotLinterna.transform.eulerAngles = new Vector3(0f, 0f, 180f);
+            linternaDerecha.SetActive(false);
+            linternaArriba.SetActive(true);
+            linternaAbajo.SetActive(false);
+            linternaIzquierda.SetActive(false);
         }
+
         else if (Input.GetKey(KeyCode.S))
         {
-            pivotLinterna.transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            linternaDerecha.SetActive(false);
+            linternaArriba.SetActive(false);
+            linternaAbajo.SetActive(true);
+            linternaIzquierda.SetActive(false);
         }
+
         else if (Input.GetKey(KeyCode.A))
         {
-            pivotLinterna.transform.eulerAngles = new Vector3(0f, 0f, 270f);
+            linternaDerecha.SetActive(false);
+            linternaArriba.SetActive(false);
+            linternaAbajo.SetActive(false);
+            linternaIzquierda.SetActive(true);
         }
+
         else
         {
-            pivotLinterna.transform.eulerAngles = new Vector3(0f, 0f, 90f);
+            linternaDerecha.SetActive(true);
+            linternaArriba.SetActive(false);
+            linternaAbajo.SetActive(false);
+            linternaIzquierda.SetActive(false);
         }
     }
 
