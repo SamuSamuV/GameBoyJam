@@ -10,13 +10,9 @@ public class GameManager : MonoBehaviour
     private int selectedButtonIndex = 0;
     public static GameManager instance;
     public GameObject[] objectsToActivate;
-
-<<<<<<< Updated upstream
     public Sprite defaultSprite;  
     public Sprite selectedSprite; 
-=======
     [SerializeField] public GameObject derrotapanel;
->>>>>>> Stashed changes
 
     void Start()
     {
