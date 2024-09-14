@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public float velocidad = 2f;
     private Rigidbody2D rb;
     private Animator animator;
+    [SerializeField] public float vidas = 3f;
 
     public bool seEnfocoFantasmaPiedra = false;
     public bool seEnfocoFantasmaTijera = false;
@@ -19,16 +20,30 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject linternaAbajo;
     [SerializeField] GameObject linternaIzquierda;
 
-    [SerializeField] GameObject fantasmaPiedra;
-    [SerializeField] GameObject fantasmaTijera;
-    [SerializeField] GameObject fantasmaPapelSup;
-    [SerializeField] GameObject fantasmaPapelInf;
-    [SerializeField] GameObject fantasmaPapelIzq;
+    [SerializeField] GameObject fantasmaPiedraF;
+    [SerializeField] GameObject fantasmaPiedraN;
+    [SerializeField] GameObject fantasmaPiedraD;
+    [SerializeField] GameObject fantasmaTijeraF;
+    [SerializeField] GameObject fantasmaTijeraN;
+    [SerializeField] GameObject fantasmaTijeraD;
+    [SerializeField] GameObject fantasmaPapelSupF;
+    [SerializeField] GameObject fantasmaPapelSupN;
+    [SerializeField] GameObject fantasmaPapelSupD;
+    [SerializeField] GameObject fantasmaPapelInfF;
+    [SerializeField] GameObject fantasmaPapelInfN;
+    [SerializeField] GameObject fantasmaPapelInfD;
+    [SerializeField] GameObject fantasmaPapelIzqF;
+    [SerializeField] GameObject fantasmaPapelIzqN;
+    [SerializeField] GameObject fantasmaPapelIzqD;
+
+    [SerializeField] GameObject spawnerF;
+    [SerializeField] GameObject spawnerN;
+    [SerializeField] GameObject spawnerD;
 
     private float tiempoUltimaPulsacionW = 0f;
     private float tiempoUltimaPulsacionS = 0f;
     private float tiempoUltimaPulsacionA = 0f;
-    private float intervaloPulsacion = 0.5f; // Intervalo entre pulsaciones en segundos
+    private float intervaloPulsacion = 0.5f;
 
     void Start()
     {
@@ -39,6 +54,10 @@ public class Player : MonoBehaviour
         linternaArriba = GameObject.FindGameObjectWithTag("LinternaArriba");
         linternaAbajo = GameObject.FindGameObjectWithTag("LinternaAbajo");
         linternaIzquierda = GameObject.FindGameObjectWithTag("LinternaIzquierda");
+
+        spawnerF = GameObject.FindGameObjectWithTag("SpawnerF");
+        spawnerN = GameObject.FindGameObjectWithTag("SpawnerN");
+        spawnerD = GameObject.FindGameObjectWithTag("SpawnerD");
 
         linternaDerecha.SetActive(false);
         linternaArriba.SetActive(false);
@@ -53,58 +72,8 @@ public class Player : MonoBehaviour
             Movimiento();
             GirarLinterna();
         }
-
-        MatarFantasma();
     }
 
-    public void MatarFantasma()
-    {
-        if (seEnfocoFantasmaTijera && Input.GetKey(KeyCode.Q))
-        {
-            DestruirFantasma(fantasmaTijera);
-        }
-
-        if (seEnfocoFantasmaPiedra && Input.GetKey(KeyCode.E))
-        {
-            DestruirFantasma(fantasmaPiedra);
-        }
-
-        if (seEnfocoFantasmaPapelSup)
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                if (Time.time - tiempoUltimaPulsacionW < intervaloPulsacion)
-                {
-                    DestruirFantasma(fantasmaPapelSup);
-                }
-                tiempoUltimaPulsacionW = Time.time;
-            }
-        }
-
-        if (seEnfocoFantasmaPapelInf)
-        {
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                if (Time.time - tiempoUltimaPulsacionS < intervaloPulsacion)
-                {
-                    DestruirFantasma(fantasmaPapelInf);
-                }
-                tiempoUltimaPulsacionS = Time.time;
-            }
-        }
-
-        if (seEnfocoFantasmaPapelIzq)
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                if (Time.time - tiempoUltimaPulsacionA < intervaloPulsacion)
-                {
-                    DestruirFantasma(fantasmaPapelIzq);
-                }
-                tiempoUltimaPulsacionA = Time.time;
-            }
-        }
-    }
 
     public void Movimiento()
     {
@@ -126,6 +95,7 @@ public class Player : MonoBehaviour
             linternaAbajo.SetActive(false);
             linternaIzquierda.SetActive(false);
         }
+
         else if (Input.GetKey(KeyCode.S))
         {
             animator.SetBool("MirandoArriba", false);
@@ -138,6 +108,7 @@ public class Player : MonoBehaviour
             linternaAbajo.SetActive(true);
             linternaIzquierda.SetActive(false);
         }
+
         else if (Input.GetKey(KeyCode.A))
         {
             animator.SetBool("MirandoArriba", false);
@@ -150,6 +121,7 @@ public class Player : MonoBehaviour
             linternaAbajo.SetActive(false);
             linternaIzquierda.SetActive(true);
         }
+
         else
         {
             animator.SetBool("MirandoArriba", false);
@@ -166,7 +138,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("FantasmaPiedra"))
+        if (collision.gameObject.CompareTag("FantasmaPiedraF"))
         {
             if (animator.GetBool("MirandoDer"))
             {
@@ -174,11 +146,41 @@ public class Player : MonoBehaviour
             }
 
             seEnfocoFantasmaPiedra = true;
-            fantasmaPiedra = collision.gameObject;
-            Debug.Log("Presiona E para destruir el fantasma Piedra.");
+            fantasmaPiedraF = collision.gameObject;
+            Debug.Log("Presiona K para destruir el fantasma Piedra.");
+
+            StartCoroutine(spawnerF.gameObject.GetComponent<SpawnerF>().IniciarTemporizador(5f, fantasmaPiedraF, KeyCode.K));
         }
 
-        else if (collision.gameObject.CompareTag("FantasmaTijera"))
+        else if (collision.gameObject.CompareTag("FantasmaPiedraN"))
+        {
+            if (animator.GetBool("MirandoDer"))
+            {
+                return;
+            }
+
+            seEnfocoFantasmaPiedra = true;
+            fantasmaPiedraN = collision.gameObject;
+            Debug.Log("Presiona K para destruir el fantasma Piedra.");
+
+            StartCoroutine(spawnerN.gameObject.GetComponent<SpawnerN>().IniciarTemporizador(3f, fantasmaPiedraN, KeyCode.K));
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaPiedraD"))
+        {
+            if (animator.GetBool("MirandoDer"))
+            {
+                return;
+            }
+
+            seEnfocoFantasmaPiedra = true;
+            fantasmaPiedraD = collision.gameObject;
+            Debug.Log("Presiona K para destruir el fantasma Piedra.");
+
+            StartCoroutine(spawnerD.gameObject.GetComponent<SpawnerD>().IniciarTemporizador(2f, fantasmaPiedraD, KeyCode.K));
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaTijeraF"))
         {
             if (animator.GetBool("MirandoDer"))
             {
@@ -186,37 +188,145 @@ public class Player : MonoBehaviour
             }
 
             seEnfocoFantasmaTijera = true;
-            fantasmaTijera = collision.gameObject;
-            Debug.Log("Presiona Q para destruir el fantasma Tijera.");
+            fantasmaTijeraF = collision.gameObject;
+            Debug.Log("Presiona J para destruir el fantasma Tijera.");
+
+            StartCoroutine(spawnerF.gameObject.GetComponent<SpawnerF>().IniciarTemporizador(5f, fantasmaTijeraF, KeyCode.J));
         }
 
-        else if (collision.gameObject.CompareTag("FantasmaPapelSup"))
+        else if (collision.gameObject.CompareTag("FantasmaTijeraN"))
+        {
+            if (animator.GetBool("MirandoDer"))
+            {
+                return;
+            }
+
+            seEnfocoFantasmaTijera = true;
+            fantasmaTijeraN = collision.gameObject;
+            Debug.Log("Presiona J para destruir el fantasma Tijera.");
+
+            StartCoroutine(spawnerN.gameObject.GetComponent<SpawnerN>().IniciarTemporizador(3f, fantasmaTijeraN, KeyCode.J));
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaTijeraD"))
+        {
+            if (animator.GetBool("MirandoDer"))
+            {
+                return;
+            }
+
+            seEnfocoFantasmaTijera = true;
+            fantasmaTijeraD = collision.gameObject;
+            Debug.Log("Presiona J para destruir el fantasma Tijera.");
+
+            StartCoroutine(spawnerD.gameObject.GetComponent<SpawnerD>().IniciarTemporizador(2f, fantasmaTijeraD, KeyCode.J));
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaPapelSupF"))
         {
             if (animator.GetBool("MirandoArriba"))
             {
                 seEnfocoFantasmaPapelSup = true;
-                fantasmaPapelSup = collision.gameObject;
+                fantasmaPapelSupF = collision.gameObject;
                 Debug.Log("Presiona W dos veces para destruir el fantasma Papel superior.");
+
+                StartCoroutine(spawnerF.gameObject.GetComponent<SpawnerF>().IniciarTemporizador(5f, fantasmaPapelSupF, KeyCode.W));
             }
         }
 
-        else if (collision.gameObject.CompareTag("FantasmaPapelInf"))
+        else if (collision.gameObject.CompareTag("FantasmaPapelSupN"))
+        {
+            if (animator.GetBool("MirandoArriba"))
+            {
+                seEnfocoFantasmaPapelSup = true;
+                fantasmaPapelSupN = collision.gameObject;
+                Debug.Log("Presiona W dos veces para destruir el fantasma Papel superior.");
+
+                StartCoroutine(spawnerN.gameObject.GetComponent<SpawnerN>().IniciarTemporizador(3f, fantasmaPapelSupN, KeyCode.W));
+            }
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaPapelSupD"))
+        {
+            if (animator.GetBool("MirandoArriba"))
+            {
+                seEnfocoFantasmaPapelSup = true;
+                fantasmaPapelSupD = collision.gameObject;
+                Debug.Log("Presiona W dos veces para destruir el fantasma Papel superior.");
+
+                StartCoroutine(spawnerD.gameObject.GetComponent<SpawnerD>().IniciarTemporizador(2f, fantasmaPapelSupD, KeyCode.W));
+            }
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaPapelInfF"))
         {
             if (animator.GetBool("MirandoAbajo"))
             {
                 seEnfocoFantasmaPapelInf = true;
-                fantasmaPapelInf = collision.gameObject;
+                fantasmaPapelInfF = collision.gameObject;
                 Debug.Log("Presiona S dos veces para destruir el fantasma Papel inferior.");
+
+                StartCoroutine(spawnerF.gameObject.GetComponent<SpawnerF>().IniciarTemporizador(5f, fantasmaPapelInfF, KeyCode.S));
             }
         }
 
-        else if (collision.gameObject.CompareTag("FantasmaPapelIzq"))
+        else if (collision.gameObject.CompareTag("FantasmaPapelInfN"))
+        {
+            if (animator.GetBool("MirandoAbajo"))
+            {
+                seEnfocoFantasmaPapelInf = true;
+                fantasmaPapelInfN = collision.gameObject;
+                Debug.Log("Presiona S dos veces para destruir el fantasma Papel inferior.");
+
+                StartCoroutine(spawnerN.gameObject.GetComponent<SpawnerN>().IniciarTemporizador(3f, fantasmaPapelInfN, KeyCode.S));
+            }
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaPapelInfD"))
+        {
+            if (animator.GetBool("MirandoAbajo"))
+            {
+                seEnfocoFantasmaPapelInf = true;
+                fantasmaPapelInfD = collision.gameObject;
+                Debug.Log("Presiona S dos veces para destruir el fantasma Papel inferior.");
+
+                StartCoroutine(spawnerD.gameObject.GetComponent<SpawnerD>().IniciarTemporizador(2f, fantasmaPapelInfD, KeyCode.S));
+            }
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaPapelIzqF"))
         {
             if (animator.GetBool("MirandoIzq"))
             {
                 seEnfocoFantasmaPapelIzq = true;
-                fantasmaPapelIzq = collision.gameObject;
+                fantasmaPapelIzqF = collision.gameObject;
                 Debug.Log("Presiona A dos veces para destruir el fantasma Papel izquierdo.");
+
+                StartCoroutine(spawnerF.gameObject.GetComponent<SpawnerF>().IniciarTemporizador(5f, fantasmaPapelSupD, KeyCode.A));
+            }
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaPapelIzqN"))
+        {
+            if (animator.GetBool("MirandoIzq"))
+            {
+                seEnfocoFantasmaPapelIzq = true;
+                fantasmaPapelIzqN = collision.gameObject;
+                Debug.Log("Presiona A dos veces para destruir el fantasma Papel izquierdo.");
+
+                StartCoroutine(spawnerN.gameObject.GetComponent<SpawnerN>().IniciarTemporizador(3f, fantasmaPapelIzqN, KeyCode.A));
+            }
+        }
+
+        else if (collision.gameObject.CompareTag("FantasmaPapelIzqD"))
+        {
+            if (animator.GetBool("MirandoIzq"))
+            {
+                seEnfocoFantasmaPapelIzq = true;
+                fantasmaPapelIzqD = collision.gameObject;
+                Debug.Log("Presiona A dos veces para destruir el fantasma Papel izquierdo.");
+
+                StartCoroutine(spawnerD.gameObject.GetComponent<SpawnerD>().IniciarTemporizador(2f, fantasmaPapelIzqD, KeyCode.A));
             }
         }
     }
@@ -228,7 +338,7 @@ public class Player : MonoBehaviour
         Debug.Log("Fantasma destruido.");
     }
 
-    private void ResetearEnfoque()
+    public void ResetearEnfoque()
     {
         seEnfocoFantasmaPiedra = false;
         seEnfocoFantasmaTijera = false;

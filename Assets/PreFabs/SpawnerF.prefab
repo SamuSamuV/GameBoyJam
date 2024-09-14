@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7072735784789583445}
   - component: {fileID: 7072735784789583446}
   m_Layer: 0
-  m_Name: Spawner
-  m_TagString: Untagged
+  m_Name: SpawnerF
+  m_TagString: SpawnerF
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayFantasmas: []
+  jugador: {fileID: 0}
   transformSpawner: {fileID: 7072735784789583445}

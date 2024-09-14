@@ -18,6 +18,25 @@ TagManager:
   - FantasmaPapelSup
   - FantasmaPapelInf
   - FantasmaPapelIzq
+  - SpawnerF
+  - SpawnerN
+  - SpawnerD
+  - FantasmaPapelSupF
+  - FantasmaPapelSupN
+  - FantasmaPapelSupD
+  - FantasmaPapelIzqF
+  - FantasmaPapelIzqN
+  - FantasmaPapelIzqD
+  - FantasmaPapeInfF
+  - FantasmaPapelInfN
+  - FantasmaPapelInfD
+  - FantasmaPiedraF
+  - FantasmaPiedraN
+  - FantasmaPiedraD
+  - FantasmaTijeraF
+  - FantasmaTijeraN
+  - FantasmaTijeraD
+  - FantasmaPapelInfF
   layers:
   - Default
   - TransparentFX
