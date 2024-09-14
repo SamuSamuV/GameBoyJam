@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7783578168675323193}
   - component: {fileID: 7783578168675323192}
   m_Layer: 0
-  m_Name: FantasmaPapelInferior
-  m_TagString: FantasmaPapel
+  m_Name: FantasmaPapelSuperior
+  m_TagString: FantasmaPapelSup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.8739412, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.14966917, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
