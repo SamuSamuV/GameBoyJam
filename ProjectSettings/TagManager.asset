@@ -6,37 +6,13 @@ TagManager:
   tags:
   - Linterna
   - PivotLinterna
-  - FantasmaPiedra
-  - FantasmaTijera
-  - FantasmaPapel
   - LinternaDerecha
   - LinternaArriba
   - LinternaAbajo
   - LinternaIzquierda
   - BichoMalo
   - GM
-  - FantasmaPapelSup
-  - FantasmaPapelInf
-  - FantasmaPapelIzq
-  - SpawnerF
-  - SpawnerN
-  - SpawnerD
-  - FantasmaPapelSupF
-  - FantasmaPapelSupN
-  - FantasmaPapelSupD
-  - FantasmaPapelIzqF
-  - FantasmaPapelIzqN
-  - FantasmaPapelIzqD
-  - FantasmaPapeInfF
-  - FantasmaPapelInfN
-  - FantasmaPapelInfD
-  - FantasmaPiedraF
-  - FantasmaPiedraN
-  - FantasmaPiedraD
-  - FantasmaTijeraF
-  - FantasmaTijeraN
-  - FantasmaTijeraD
-  - FantasmaPapelInfF
+  - Fantasma
   layers:
   - Default
   - TransparentFX
