@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public List<GameObject> currentGhostSpawners; // Los Spawners actuales.
     [SerializeField] public GameObject player;
     [SerializeField] public Transform playerTransform;
+
+    public int contRonda;
+    public int contDiff;
 
     private void Start()
     {
