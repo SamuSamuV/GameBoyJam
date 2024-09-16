@@ -15,6 +15,9 @@ public class Ghost : MonoBehaviour
     [SerializeField] public Animator anim;      // Tienen diferentes animaciones dependiendo del tipo.
     [SerializeField] public GameObject papa;      // Tienen diferentes animaciones dependiendo del tipo.
 
+    public int contRonda;
+    int contFantasmas = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,4 +120,46 @@ public class Ghost : MonoBehaviour
 
         gM.player.gameObject.GetComponent<Player>().ResetearEnfoque();
     }
+
+    //Poner a todos los fondos un collider que al entrar en contacto con el jugador compruebe si ha terminado la ronda y si la ha terminado te spawnee los fantasmas con la logica de arriba.
+    //Hacer un OnColliderExit que al salir le quite 1 vida, pero el problema viene en que si se destruye el fantasma tmb se va a salir y le va a quitar una vida cuando no debería, entonces activar antes una bool que se asegure de entrar si no ha sido activada, por lo que significará que ha fallado.
+    //De esta forma se podrá contar el numero de fantasmas por el que se ha pasado, problema, que depende de la dificultad. (Puedo hacer que salga del triger del fantasma SIEMPRE, me aumente +1 en una variable que vaya definiendo en que ronda estamos. Ej, que si esta variable es == 2, spawnee la siguiente ronda comprobando que ronda toca, puedo usar lo que está arriba)
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            contFantasmas++;
+
+            if (contRonda >= 0 && contRonda <= 3 && contFantasmas == 2)
+            {
+                gM.player.gameObject.GetComponent<GameManager>().SpawnerPacks("easy");
+                gM.gameObject.GetComponent<GameManager>().SpawnerPacks("easy");
+                gM.GetComponent<GameManager>().SpawnerPacks("easy");
+
+                contFantasmas = 0;
+                contRonda++;
+            }
+
+            else if (contRonda >= 4 && contRonda <= 7 && contFantasmas == 3)
+            {
+                gM.player.gameObject.GetComponent<GameManager>().SpawnerPacks("normal");
+                contFantasmas = 0;
+                contRonda++;
+            }
+
+            else if (contRonda >= 8 && contRonda <= 10 && contFantasmas == 4)
+            {
+                gM.gameObject.GetComponent<GameManager>().SpawnerPacks("hard");
+                contFantasmas = 0;
+                contRonda++;
+            }
+
+            else
+            {
+                //Victoria
+            }
+        }
+    }
+
 }

@@ -15,15 +15,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject player;
     [SerializeField] public Transform playerTransform;
 
-    public int contRonda;
-    public int contDiff;
-
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.GetComponent<Transform>().transform;
 
-        SpawnerPacks("hard");
+        SpawnerPacks("easy");
+    }
+
+    private void Update()
+    {
+
     }
 
     public void Reintentar()
@@ -50,28 +52,24 @@ public class GameManager : MonoBehaviour
             {
                 s1 = GhostSpawnersCreation("Paper", 1, "arriba");
                 s2 = GhostSpawnersCreation("Paper", 2, "izquierda");
-                contRonda++;
             }
 
             else if (rnd == 2)
             {
                 s1 = GhostSpawnersCreation("Paper", 1, "arriba");
                 s2 = GhostSpawnersCreation("Scissors", 2, "abajo");
-                contRonda++;
             }
 
             else if (rnd == 3)
             {
                 s1 = GhostSpawnersCreation("Paper", 1, "left");
                 s2 = GhostSpawnersCreation("Rock", 2, "arriba");
-                contRonda++;
             }
 
             else if (rnd == 4)
             {
                 s1 = GhostSpawnersCreation("Scissors", 1, "izquierda");
                 s2 = GhostSpawnersCreation("Paper", 2, "arriba");
-                contRonda++;
             }
 
             for (int i = 0; i < currentGhostSpawners.Count; i++)
@@ -87,7 +85,6 @@ public class GameManager : MonoBehaviour
                 s1 = GhostSpawnersCreation("Rock", 1, "abajo");
                 s2 = GhostSpawnersCreation("Rock", 2, "izquierda");
                 s3 = GhostSpawnersCreation("Scissors", 3, "abajo");
-                contRonda++;
             }
 
             else if (rnd == 2)
@@ -95,7 +92,6 @@ public class GameManager : MonoBehaviour
                 s1 = GhostSpawnersCreation("Paper", 1, "arriba");
                 s2 = GhostSpawnersCreation("Rock", 2, "arriba");
                 s3 = GhostSpawnersCreation("Paper", 3, "izquierda");
-                contRonda++;
             }
 
             else if (rnd == 3)
@@ -103,7 +99,6 @@ public class GameManager : MonoBehaviour
                 s1 = GhostSpawnersCreation("Scissors", 1, "abajo");
                 s2 = GhostSpawnersCreation("Paper", 2, "arriba");
                 s3 = GhostSpawnersCreation("Rock", 3, "abajo");
-                contRonda++;
             }
 
             else if (rnd == 4)
@@ -111,7 +106,6 @@ public class GameManager : MonoBehaviour
                 s1 = GhostSpawnersCreation("Scissors", 1, "izquierda");
                 s2 = GhostSpawnersCreation("Paper", 2, "arriba");
                 s3 = GhostSpawnersCreation("Scissors", 3, "abajo");
-                contRonda++;
             }
 
             else if (rnd == 5)
@@ -119,7 +113,6 @@ public class GameManager : MonoBehaviour
                 s1 = GhostSpawnersCreation("Paper", 1, "arriba");
                 s2 = GhostSpawnersCreation("Scissors", 2, "arriba");
                 s3 = GhostSpawnersCreation("Rock", 3, "abajo");
-                contRonda++;
             }
 
             for (int i = 0; i < currentGhostSpawners.Count; i++)
@@ -136,7 +129,6 @@ public class GameManager : MonoBehaviour
                 s2 = GhostSpawnersCreation("Rock", 2, "abajo");
                 s3 = GhostSpawnersCreation("Scissors", 3, "abajo");
                 s4 = GhostSpawnersCreation("Paper", 4, "izquierda");
-                contRonda++;
             }
 
             else if (rnd == 2)
@@ -145,7 +137,6 @@ public class GameManager : MonoBehaviour
                 s2 = GhostSpawnersCreation("Rock", 2, "arriba");
                 s3 = GhostSpawnersCreation("Scissors", 3, "izquierda");
                 s4 = GhostSpawnersCreation("Paper", 4, "arriba");
-                contRonda++;
             }
 
             else if (rnd == 3)
@@ -154,7 +145,6 @@ public class GameManager : MonoBehaviour
                 s2 = GhostSpawnersCreation("Paper", 2, "izquierda");
                 s3 = GhostSpawnersCreation("Scissors", 3, "abajo");
                 s4 = GhostSpawnersCreation("Paper", 4, "arriba");
-                contRonda++;
             }
 
             else if (rnd == 4)
@@ -163,7 +153,6 @@ public class GameManager : MonoBehaviour
                 s2 = GhostSpawnersCreation("Paper", 2, "arriba");
                 s3 = GhostSpawnersCreation("Rock", 3, "abajo");
                 s4 = GhostSpawnersCreation("Paper", 4, "izquierda");
-                contRonda++;
             }
 
             else if (rnd == 5)
@@ -172,7 +161,6 @@ public class GameManager : MonoBehaviour
                 s2 = GhostSpawnersCreation("Scissors", 2, "izquierda");
                 s3 = GhostSpawnersCreation("Rock", 3, "izquierda");
                 s4 = GhostSpawnersCreation("Rock", 4, "arriba");
-                contRonda++;
             }
 
             for (int i = 0; i < currentGhostSpawners.Count; i++)
