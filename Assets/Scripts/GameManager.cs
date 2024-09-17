@@ -15,12 +15,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject player;
     [SerializeField] public Transform playerTransform;
 
+    public int contRonda;
+    public int contFantasmas = 0;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.GetComponent<Transform>().transform;
 
         SpawnerPacks("easy");
+        contRonda++;
     }
 
     private void Update()

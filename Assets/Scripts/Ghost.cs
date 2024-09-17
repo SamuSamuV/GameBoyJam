@@ -15,9 +15,6 @@ public class Ghost : MonoBehaviour
     [SerializeField] public Animator anim;      // Tienen diferentes animaciones dependiendo del tipo.
     [SerializeField] public GameObject papa;      // Tienen diferentes animaciones dependiendo del tipo.
 
-    public int contRonda;
-    int contFantasmas = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -129,34 +126,42 @@ public class Ghost : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            contFantasmas++;
+            gM.contFantasmas++;
+            Debug.Log("Entré papu");
 
-            if (contRonda >= 0 && contRonda <= 3 && contFantasmas == 2)
+            if (gM.contRonda >= 0 && gM.contRonda <= 2 && gM.contFantasmas == 2)
             {
-                gM.player.gameObject.GetComponent<GameManager>().SpawnerPacks("easy");
-                gM.gameObject.GetComponent<GameManager>().SpawnerPacks("easy");
-                gM.GetComponent<GameManager>().SpawnerPacks("easy");
+                gM.SpawnerPacks("easy");
 
-                contFantasmas = 0;
-                contRonda++;
+                gM.contFantasmas = 0;
+                gM.contRonda++;
+
+                if (gM.contRonda == 3)
+                    gM.contFantasmas++;
             }
 
-            else if (contRonda >= 4 && contRonda <= 7 && contFantasmas == 3)
+            else if (gM.contRonda >= 3 && gM.contRonda <= 6 && gM.contFantasmas == 3)
             {
-                gM.player.gameObject.GetComponent<GameManager>().SpawnerPacks("normal");
-                contFantasmas = 0;
-                contRonda++;
+                gM.SpawnerPacks("normal");
+                gM.contFantasmas = 0;
+                gM.contRonda++;
+
+                if (gM.contRonda == 7)
+                    gM.contFantasmas++;
             }
 
-            else if (contRonda >= 8 && contRonda <= 10 && contFantasmas == 4)
+            else if (gM.contRonda >= 7 && gM.contRonda <= 9 && gM.contFantasmas == 4)
             {
-                gM.gameObject.GetComponent<GameManager>().SpawnerPacks("hard");
-                contFantasmas = 0;
-                contRonda++;
+                gM.SpawnerPacks("hard");
+                gM.contFantasmas = 0;
+                gM.contRonda++;
+                if (gM.contRonda == 10)
+                    gM.contFantasmas++;
             }
 
             else
             {
+                Debug.Log("GANASTE DE MANERA BIEN SABROSONAAAAAAAAAAAAAAAA");
                 //Victoria
             }
         }
