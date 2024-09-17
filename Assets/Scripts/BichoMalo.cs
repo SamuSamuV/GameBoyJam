@@ -27,6 +27,7 @@ public class BichoMalo : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             gM.derrotapanel.SetActive(true);
+            gM.seTerminoPartida = true;
             Time.timeScale = 0;
         }
     }

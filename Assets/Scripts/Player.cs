@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     [SerializeField] public GameObject linternaAbajo;
     [SerializeField] public GameObject linternaIzquierda;
 
+    [SerializeField] public GameManager gM;
+
     private float tiempoUltimaPulsacionW = 0f;
     private float tiempoUltimaPulsacionS = 0f;
     private float tiempoUltimaPulsacionA = 0f;
@@ -32,6 +34,7 @@ public class Player : MonoBehaviour
         linternaArriba = GameObject.FindGameObjectWithTag("LinternaArriba");
         linternaAbajo = GameObject.FindGameObjectWithTag("LinternaAbajo");
         linternaIzquierda = GameObject.FindGameObjectWithTag("LinternaIzquierda");
+        gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
 
         linternaDerecha.SetActive(false);
         linternaArriba.SetActive(false);
@@ -41,7 +44,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!seEnfocoFantasmaPiedra && !seEnfocoFantasmaTijera && !seEnfocoFantasmaPapel)
+        if (!seEnfocoFantasmaPiedra && !seEnfocoFantasmaTijera && !seEnfocoFantasmaPapel && !gM.seTerminoPartida)
         {
             Movimiento();
             GirarLinterna();
@@ -122,10 +125,5 @@ public class Player : MonoBehaviour
         seEnfocoFantasmaPiedra = false;
         seEnfocoFantasmaTijera = false;
         seEnfocoFantasmaPapel = false;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
     }
 }

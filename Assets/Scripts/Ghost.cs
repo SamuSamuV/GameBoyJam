@@ -14,11 +14,13 @@ public class Ghost : MonoBehaviour
     [SerializeField] public float tiempo;       // Pueden durar 2, 3 o 5 segundos.
     [SerializeField] public Animator anim;      // Tienen diferentes animaciones dependiendo del tipo.
     [SerializeField] public GameObject papa;      // Tienen diferentes animaciones dependiendo del tipo.
+    [SerializeField] public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
         gameObject.tag = "Fantasma";
         papa = gameObject.transform.parent.gameObject;
         WhoAmI();
@@ -84,22 +86,22 @@ public class Ghost : MonoBehaviour
         {
             tiempoRestante -= Time.deltaTime;
 
-            if (Input.GetKeyDown(teclaDestruir))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) 
+                || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))
             {
-                // Mirar la dificultad del fantasma y en base a eso, sumar uno al contador de fantasmasdestruidos de dicha dificultad
-                // En caso de haber destruido el total de fantasmas de esa dificultad, sumar 1 al contador de oleadas de dicha dificultad
-                gM.player.gameObject.GetComponent<Player>().DestruirFantasma(gameObject);
+                if (Input.GetKeyDown(teclaDestruir))
+                {
+                    gM.player.gameObject.GetComponent<Player>().DestruirFantasma(gameObject);
 
-                // Si el contador de oleadasfáciles es menor a 3 y el contador de fantasmasfácilespasados es 2, spawneo el siguiente de spawner de fáciles,
-                // en cambio, si el contador de oleadasfáciles es 3 o superior, spawneo el primer spawner de oleadasnormales.
+                    // Lógica de oleadas, dependiendo de la dificultad
+                    yield break;
+                }
 
-                //if (gameObject.transform.position.x == 48)
-                //{
-                //    gM.SpawnerPacks("hard");
-                //}
-
-
-                yield break;
+                else
+                {
+                    gM.player.gameObject.GetComponent<Player>().vidas--;
+                    Debug.Log("Tecla incorrecta. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
+                }
             }
 
             yield return null;
@@ -107,27 +109,25 @@ public class Ghost : MonoBehaviour
 
         if (tiempoRestante <= 0)
         {
-            //if (gameObject.transform.position.x == 48)
-            //{
-            //    gM.SpawnerPacks("hard");
-            //}
-
+            // Cuando el tiempo se acaba y no destruyen al fantasma
             gM.player.gameObject.GetComponent<Player>().vidas--;
             Debug.Log("No destruiste al fantasma a tiempo. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
         }
 
-
+        // Reinicia el enfoque del jugador después del temporizador
         gM.player.gameObject.GetComponent<Player>().ResetearEnfoque();
     }
-
-    //Poner a todos los fondos un collider que al entrar en contacto con el jugador compruebe si ha terminado la ronda y si la ha terminado te spawnee los fantasmas con la logica de arriba.
-    //Hacer un OnColliderExit que al salir le quite 1 vida, pero el problema viene en que si se destruye el fantasma tmb se va a salir y le va a quitar una vida cuando no debería, entonces activar antes una bool que se asegure de entrar si no ha sido activada, por lo que significará que ha fallado.
-    //De esta forma se podrá contar el numero de fantasmas por el que se ha pasado, problema, que depende de la dificultad. (Puedo hacer que salga del triger del fantasma SIEMPRE, me aumente +1 en una variable que vaya definiendo en que ronda estamos. Ej, que si esta variable es == 2, spawnee la siguiente ronda comprobando que ronda toca, puedo usar lo que está arriba)
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (!player.GetComponent<Player>().seEnfocoFantasmaPapel && !player.GetComponent<Player>().seEnfocoFantasmaPiedra && !player.GetComponent<Player>().seEnfocoFantasmaTijera)
+            {
+                player.GetComponent<Player>().vidas--;
+                Debug.Log("No destruiste al fantasma. Te queda " + player.GetComponent<Player>().vidas + " vida.");
+            }
+
             gM.contFantasmas++;
             Debug.Log("Entré papu");
 
@@ -167,9 +167,11 @@ public class Ghost : MonoBehaviour
             else if (gM.contRonda >= 10 && gM.contFantasmas == 5)
             {
                 Debug.Log("GANASTE DE MANERA BIEN SABROSONAAAAAAAAAAAAAAAA");
+                gM.victoriapanel.SetActive(true);
+                Time.timeScale = 0;
+                gM.seTerminoPartida = true;
                 //Victoria
             }
         }
     }
-
 }

@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] public GameObject derrotapanel;
+    [SerializeField] public GameObject victoriapanel;
     [SerializeField] public GameObject ghost;
     [SerializeField] public GameObject[] ghostSpawners; // Habrá 4 en dificultad máxima.
     [SerializeField] public Sprite[] ghostImages;       // Tienen imágenes diferentes según el tipo.
@@ -15,21 +16,33 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject player;
     [SerializeField] public Transform playerTransform;
 
+    public bool seTerminoPartida = false;
+
     public int contRonda;
     public int contFantasmas = 0;
 
     private void Start()
     {
+        Time.timeScale = 1;
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.GetComponent<Transform>().transform;
 
         SpawnerPacks("easy");
         contRonda++;
+
+        seTerminoPartida = false;
+
     }
 
     private void Update()
     {
-
+        if (player.gameObject.GetComponent<Player>().vidas <= 0)
+        {
+            derrotapanel.SetActive(true);
+            seTerminoPartida = true;
+            Time.timeScale = 0;
+        }
     }
 
     public void Reintentar()
