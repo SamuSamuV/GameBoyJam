@@ -123,4 +123,9 @@ public class Player : MonoBehaviour
         seEnfocoFantasmaTijera = false;
         seEnfocoFantasmaPapel = false;
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+    }
 }

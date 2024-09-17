@@ -92,11 +92,13 @@ public class Ghost : MonoBehaviour
 
                 // Si el contador de oleadasfáciles es menor a 3 y el contador de fantasmasfácilespasados es 2, spawneo el siguiente de spawner de fáciles,
                 // en cambio, si el contador de oleadasfáciles es 3 o superior, spawneo el primer spawner de oleadasnormales.
-                
+
                 //if (gameObject.transform.position.x == 48)
                 //{
                 //    gM.SpawnerPacks("hard");
                 //}
+
+
                 yield break;
             }
 
@@ -143,6 +145,7 @@ public class Ghost : MonoBehaviour
             else if (gM.contRonda >= 3 && gM.contRonda <= 6 && gM.contFantasmas == 3)
             {
                 gM.SpawnerPacks("normal");
+
                 gM.contFantasmas = 0;
                 gM.contRonda++;
 
@@ -153,13 +156,15 @@ public class Ghost : MonoBehaviour
             else if (gM.contRonda >= 7 && gM.contRonda <= 9 && gM.contFantasmas == 4)
             {
                 gM.SpawnerPacks("hard");
+
                 gM.contFantasmas = 0;
                 gM.contRonda++;
+
                 if (gM.contRonda == 10)
                     gM.contFantasmas++;
             }
 
-            else
+            else if (gM.contRonda >= 10 && gM.contFantasmas == 5)
             {
                 Debug.Log("GANASTE DE MANERA BIEN SABROSONAAAAAAAAAAAAAAAA");
                 //Victoria
