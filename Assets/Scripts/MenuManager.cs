@@ -59,16 +59,27 @@ public class MenuManager : MonoBehaviour
         // Acciones de los botones
         if (Input.GetKeyDown(KeyCode.J)) // Si le damos a J, cambia de escena
         {
+            menu.SetActive(false);
             LoadSceneFromSelectedButton();
+            
         }
 
         if (Input.GetKeyDown(KeyCode.K)) // Si le damos a K, volvemos al menú
         {
-            menu.SetActive(true);
             credits.SetActive(false);
             howplay.SetActive(false);
+            StartCoroutine(ActivarMenu(1.0f));
+
         }
     }
+
+    IEnumerator ActivarMenu(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        menu.SetActive(true);
+    }
+
+
 
     // Función para seleccionar el botón actual y cambiar su sprite
     void SelectButton(int index)
@@ -119,11 +130,18 @@ public class MenuManager : MonoBehaviour
         if (buttonIndex - 1 < objectsToActivate.Length)
         {
             menu.SetActive(false);
-            objectsToActivate[buttonIndex - 1].SetActive(true);
+            StartCoroutine(ActivarObjeto(1f));
+
         }
         else
         {
             Debug.LogWarning("No hay objeto asignado para este botón.");
+        }
+
+        IEnumerator ActivarObjeto(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            objectsToActivate[buttonIndex - 1].SetActive(true);
         }
     }
 
