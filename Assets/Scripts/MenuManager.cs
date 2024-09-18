@@ -6,22 +6,41 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    // Estructura para guardar el sprite default y el sprite seleccionado de cada botón
+    [System.Serializable]
+    public struct ButtonSprites
+    {
+        public Sprite defaultSprite;
+        public Sprite selectedSprite;
+    }
 
-    public Button[] buttons; //aqui añado los botones en el unity
+    public Button[] buttons; // Aquí añades los botones en Unity
+    public ButtonSprites[] buttonSprites; // Aquí añades los sprites para cada botón
     private int selectedButtonIndex = 0;
     public static GameManager instance;
     public GameObject[] objectsToActivate;
-    public Sprite defaultSprite;
-    public Sprite selectedSprite;
+
+    public GameObject menu;
+    public GameObject credits;
+    public GameObject howplay;
 
     void Start()
     {
+        // Verificamos que haya sprites asignados para todos los botones
+        if (buttonSprites.Length != buttons.Length)
+        {
+            Debug.LogError("El número de botones y sprites asignados no coinciden.");
+            return;
+        }
+
+        // Seleccionamos el primer botón
         SelectButton(selectedButtonIndex);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W)) //bajar de botón
+        // Navegación de botones
+        if (Input.GetKeyDown(KeyCode.W)) // Subir de botón
         {
             selectedButtonIndex--;
             if (selectedButtonIndex < 0)
@@ -29,7 +48,7 @@ public class MenuManager : MonoBehaviour
             SelectButton(selectedButtonIndex);
         }
 
-        if (Input.GetKeyDown(KeyCode.S)) //subir de botón
+        if (Input.GetKeyDown(KeyCode.S)) // Bajar de botón
         {
             selectedButtonIndex++;
             if (selectedButtonIndex >= buttons.Length)
@@ -37,22 +56,34 @@ public class MenuManager : MonoBehaviour
             SelectButton(selectedButtonIndex);
         }
 
-        if (Input.GetKeyDown(KeyCode.J)) //si le doy a la J cambio de escena
+        // Acciones de los botones
+        if (Input.GetKeyDown(KeyCode.J)) // Si le damos a J, cambia de escena
         {
             LoadSceneFromSelectedButton();
         }
+
+        if (Input.GetKeyDown(KeyCode.K)) // Si le damos a K, volvemos al menú
+        {
+            menu.SetActive(true);
+            credits.SetActive(false);
+            howplay.SetActive(false);
+        }
     }
 
+    // Función para seleccionar el botón actual y cambiar su sprite
     void SelectButton(int index)
     {
-        foreach (var button in buttons)
+        // Cambiamos todos los botones a su sprite default
+        for (int i = 0; i < buttons.Length; i++)
         {
-            button.GetComponent<Image>().sprite = defaultSprite;
+            buttons[i].GetComponent<Image>().sprite = buttonSprites[i].defaultSprite;
         }
 
-        buttons[index].GetComponent<Image>().sprite = selectedSprite;
+        // Cambiamos el sprite del botón seleccionado
+        buttons[index].GetComponent<Image>().sprite = buttonSprites[index].selectedSprite;
     }
 
+    // Función para cargar la escena desde el botón seleccionado
     void LoadSceneFromSelectedButton()
     {
         if (selectedButtonIndex == 0) // Primer botón: Cambia de escena
@@ -67,7 +98,7 @@ public class MenuManager : MonoBehaviour
                 Debug.LogError("El primer botón no tiene ninguna escena asignada.");
             }
         }
-        else if (selectedButtonIndex == buttons.Length - 1) // Último botón: Cerrar el juego
+        else if (selectedButtonIndex == buttons.Length - 1) // Último botón: Cierra el juego
         {
             QuitGame();
         }
@@ -77,6 +108,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    // Activar objetos según el botón seleccionado
     void ActivateObjectForButton(int buttonIndex)
     {
         foreach (var obj in objectsToActivate)
@@ -86,6 +118,7 @@ public class MenuManager : MonoBehaviour
 
         if (buttonIndex - 1 < objectsToActivate.Length)
         {
+            menu.SetActive(false);
             objectsToActivate[buttonIndex - 1].SetActive(true);
         }
         else
@@ -94,15 +127,16 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    // Cargar la escena
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
+    // Cerrar el juego
     public void QuitGame()
     {
         Debug.Log("El juego se ha cerrado.");
         Application.Quit();
     }
-
 }
