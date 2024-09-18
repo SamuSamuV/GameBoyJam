@@ -149,3 +149,5 @@ MonoBehaviour:
   tiempo: 0
   anim: {fileID: 0}
   papa: {fileID: 0}
+  player: {fileID: 0}
+  ghostDie: {fileID: 8300000, guid: 45cbf39b42e23f04a8c7e320670676cf, type: 3}

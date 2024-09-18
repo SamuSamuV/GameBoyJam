@@ -91,6 +91,9 @@ public class Ghost : MonoBehaviour
             {
                 if (Input.GetKeyDown(teclaDestruir))
                 {
+                    player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().ghostDieSound;
+                    player.GetComponent<Player>().audioSourcePlayer.Play();
+
                     gM.player.gameObject.GetComponent<Player>().DestruirFantasma(gameObject);
 
                     // Lógica de oleadas, dependiendo de la dificultad
@@ -99,6 +102,9 @@ public class Ghost : MonoBehaviour
 
                 else
                 {
+                    player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().hurtSound;
+                    player.GetComponent<Player>().audioSourcePlayer.Play();
+
                     gM.player.gameObject.GetComponent<Player>().vidas--;
                     Debug.Log("Tecla incorrecta. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
                 }
@@ -109,6 +115,9 @@ public class Ghost : MonoBehaviour
 
         if (tiempoRestante <= 0)
         {
+            player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().hurtSound;
+            player.GetComponent<Player>().audioSourcePlayer.Play();
+
             // Cuando el tiempo se acaba y no destruyen al fantasma
             gM.player.gameObject.GetComponent<Player>().vidas--;
             Debug.Log("No destruiste al fantasma a tiempo. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
@@ -122,8 +131,12 @@ public class Ghost : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (!player.GetComponent<Player>().seEnfocoFantasmaPapel && !player.GetComponent<Player>().seEnfocoFantasmaPiedra && !player.GetComponent<Player>().seEnfocoFantasmaTijera)
+            if (!player.GetComponent<Player>().seEnfocoFantasmaPapel && !player.GetComponent<Player>().seEnfocoFantasmaPiedra
+                && !player.GetComponent<Player>().seEnfocoFantasmaTijera)
             {
+                player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().hurtSound;
+                player.GetComponent<Player>().audioSourcePlayer.Play();
+
                 player.GetComponent<Player>().vidas--;
                 Debug.Log("No destruiste al fantasma. Te queda " + player.GetComponent<Player>().vidas + " vida.");
             }
@@ -167,6 +180,10 @@ public class Ghost : MonoBehaviour
             else if (gM.contRonda >= 10 && gM.contFantasmas == 5)
             {
                 Debug.Log("GANASTE DE MANERA BIEN SABROSONAAAAAAAAAAAAAAAA");
+
+                player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().victoriaSound;
+                player.GetComponent<Player>().audioSourcePlayer.Play();
+
                 gM.victoriapanel.SetActive(true);
                 Time.timeScale = 0;
                 gM.seTerminoPartida = true;
