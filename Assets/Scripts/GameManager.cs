@@ -35,16 +35,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (player.gameObject.GetComponent<Player>().vidas <= 0)
-        {
-            derrotapanel.SetActive(true);
-            seTerminoPartida = true;
-            Time.timeScale = 0;
-        }
-    }
-
     public void Reintentar()
     {
         Time.timeScale = 1;

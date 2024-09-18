@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BichoMalo : MonoBehaviour
 {
     public float velocidad = 1f;
     [SerializeField] GameManager gM;
+    [SerializeField] public GameObject player;
 
     void Start()
     {
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -26,9 +29,7 @@ public class BichoMalo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            gM.derrotapanel.SetActive(true);
-            gM.seTerminoPartida = true;
-            Time.timeScale = 0;
+            player.GetComponent<Player>().vidas = 0;
         }
     }
 }
