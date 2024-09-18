@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public float velocidad = 2f;
     private Rigidbody2D rb;
-    public Animator animator;
+    public Animator animatorPlayer;
     [SerializeField] public float vidas = 3f;
 
     public bool seEnfocoFantasmaPiedra = false;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animatorPlayer = GetComponent<Animator>();
 
         linternaDerecha = GameObject.FindGameObjectWithTag("LinternaDerecha");
         linternaArriba = GameObject.FindGameObjectWithTag("LinternaArriba");
@@ -49,8 +49,19 @@ public class Player : MonoBehaviour
             Movimiento();
             GirarLinterna();
         }
+
+        if (vidas <= 0 && !gM.seTerminoPartida)
+        {
+            animatorPlayer.SetBool("Muerte", true);
+            gM.seTerminoPartida = true;
+        }
     }
 
+    void AbrirDerrotaPanel()
+    {
+        gM.derrotapanel.SetActive(true);
+        Time.timeScale = 0;
+    }
 
     public void Movimiento()
     {
@@ -62,10 +73,10 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            animator.SetBool("MirandoArriba", true);
-            animator.SetBool("MirandoAbajo", false);
-            animator.SetBool("MirandoIzq", false);
-            animator.SetBool("MirandoDer", false);
+            animatorPlayer.SetBool("MirandoArriba", true);
+            animatorPlayer.SetBool("MirandoAbajo", false);
+            animatorPlayer.SetBool("MirandoIzq", false);
+            animatorPlayer.SetBool("MirandoDer", false);
 
             linternaDerecha.SetActive(false);
             linternaArriba.SetActive(true);
@@ -75,10 +86,10 @@ public class Player : MonoBehaviour
 
         else if (Input.GetKey(KeyCode.S))
         {
-            animator.SetBool("MirandoArriba", false);
-            animator.SetBool("MirandoAbajo", true);
-            animator.SetBool("MirandoIzq", false);
-            animator.SetBool("MirandoDer", false);
+            animatorPlayer.SetBool("MirandoArriba", false);
+            animatorPlayer.SetBool("MirandoAbajo", true);
+            animatorPlayer.SetBool("MirandoIzq", false);
+            animatorPlayer.SetBool("MirandoDer", false);
 
             linternaDerecha.SetActive(false);
             linternaArriba.SetActive(false);
@@ -88,10 +99,10 @@ public class Player : MonoBehaviour
 
         else if (Input.GetKey(KeyCode.A))
         {
-            animator.SetBool("MirandoArriba", false);
-            animator.SetBool("MirandoAbajo", false);
-            animator.SetBool("MirandoIzq", true);
-            animator.SetBool("MirandoDer", false);
+            animatorPlayer.SetBool("MirandoArriba", false);
+            animatorPlayer.SetBool("MirandoAbajo", false);
+            animatorPlayer.SetBool("MirandoIzq", true);
+            animatorPlayer.SetBool("MirandoDer", false);
 
             linternaDerecha.SetActive(false);
             linternaArriba.SetActive(false);
@@ -101,10 +112,10 @@ public class Player : MonoBehaviour
 
         else
         {
-            animator.SetBool("MirandoArriba", false);
-            animator.SetBool("MirandoAbajo", false);
-            animator.SetBool("MirandoIzq", false);
-            animator.SetBool("MirandoDer", true);
+            animatorPlayer.SetBool("MirandoArriba", false);
+            animatorPlayer.SetBool("MirandoAbajo", false);
+            animatorPlayer.SetBool("MirandoIzq", false);
+            animatorPlayer.SetBool("MirandoDer", true);
 
             linternaDerecha.SetActive(true);
             linternaArriba.SetActive(false);
