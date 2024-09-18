@@ -1999,9 +1999,11 @@ MonoBehaviour:
   linternaAbajo: {fileID: 0}
   linternaIzquierda: {fileID: 0}
   gM: {fileID: 0}
+  audioSourcePlayer: {fileID: 0}
   derrotaSound: {fileID: 8300000, guid: 40c7968574b9dd64796250b2dc25a686, type: 3}
   victoriaSound: {fileID: 8300000, guid: ca3cab37bfd06e846a9ca3273ada7231, type: 3}
-  hurtSound: {fileID: 0}
+  hurtSound: {fileID: 8300000, guid: bb991fe04195c2440822226ca95593c5, type: 3}
+  ghostDieSound: {fileID: 8300000, guid: 45cbf39b42e23f04a8c7e320670676cf, type: 3}
 --- !u!61 &1593869443
 BoxCollider2D:
   m_ObjectHideFlags: 0
