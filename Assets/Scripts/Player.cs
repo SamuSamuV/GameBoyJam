@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -25,6 +26,12 @@ public class Player : MonoBehaviour
     private float tiempoUltimaPulsacionA = 0f;
     private float intervaloPulsacion = 0.5f;
 
+    public AudioSource audioSourcePlayer;
+    public AudioClip derrotaSound;
+    public AudioClip victoriaSound;
+    public AudioClip hurtSound;
+    public AudioClip ghostDieSound;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,6 +47,8 @@ public class Player : MonoBehaviour
         linternaArriba.SetActive(false);
         linternaAbajo.SetActive(false);
         linternaIzquierda.SetActive(false);
+
+        audioSourcePlayer = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -53,6 +62,9 @@ public class Player : MonoBehaviour
         if (vidas <= 0 && !gM.seTerminoPartida)
         {
             animatorPlayer.SetBool("Muerte", true);
+            audioSourcePlayer.clip = derrotaSound;
+            audioSourcePlayer.Play();
+
             gM.seTerminoPartida = true;
         }
     }
