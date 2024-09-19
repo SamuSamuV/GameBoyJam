@@ -2751,9 +2751,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1797967073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b285b99c6989b344a3501622cb6472f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c902f40cfb2491429802cfc694382e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 857061124}
+  - {fileID: 17273089}
+  - {fileID: 380474677}
+  - {fileID: 1882767783}
+  buttonSprites:
+  - defaultSprite: {fileID: 21300000, guid: b8dc6a3f9215419478ccf61cd80bd851, type: 3}
+    selectedSprite: {fileID: 21300000, guid: 45eda2c857be5b7468f2d9789977e6c3, type: 3}
+  - defaultSprite: {fileID: 21300000, guid: 4833ea15611b4944a9a8157eda770ef3, type: 3}
+    selectedSprite: {fileID: 21300000, guid: a08dbc3dbe867a643bce52a77ac38557, type: 3}
+  - defaultSprite: {fileID: 21300000, guid: b8dc6a3f9215419478ccf61cd80bd851, type: 3}
+    selectedSprite: {fileID: 21300000, guid: 45eda2c857be5b7468f2d9789977e6c3, type: 3}
+  - defaultSprite: {fileID: 21300000, guid: 4833ea15611b4944a9a8157eda770ef3, type: 3}
+    selectedSprite: {fileID: 21300000, guid: a08dbc3dbe867a643bce52a77ac38557, type: 3}
 --- !u!1 &1847727229
 GameObject:
   m_ObjectHideFlags: 0
