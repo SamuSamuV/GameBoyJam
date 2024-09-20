@@ -14,6 +14,10 @@ public class MenuManager : MonoBehaviour
         public Sprite selectedSprite;
     }
 
+    public AudioClip sonidoCambiarBoton;
+    public AudioClip sonidoDarBoton;
+    private AudioSource audioSource;
+
     public Button[] buttons; // Aquí añades los botones en Unity
     public ButtonSprites[] buttonSprites; // Aquí añades los sprites para cada botón
     private int selectedButtonIndex = 0;
@@ -26,6 +30,7 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // Verificamos que haya sprites asignados para todos los botones
         if (buttonSprites.Length != buttons.Length)
         {
@@ -42,33 +47,61 @@ public class MenuManager : MonoBehaviour
         // Navegación de botones
         if (Input.GetKeyDown(KeyCode.W)) // Subir de botón
         {
-            selectedButtonIndex--;
-            if (selectedButtonIndex < 0)
-                selectedButtonIndex = buttons.Length - 1;
-            SelectButton(selectedButtonIndex);
+            if (menu.activeSelf)
+            {
+                audioSource.clip = sonidoCambiarBoton;
+                audioSource.Play();
+                selectedButtonIndex--;
+                if (selectedButtonIndex < 0)
+                    selectedButtonIndex = buttons.Length - 1;
+                SelectButton(selectedButtonIndex);
+
+            }
+
         }
 
         if (Input.GetKeyDown(KeyCode.S)) // Bajar de botón
         {
-            selectedButtonIndex++;
-            if (selectedButtonIndex >= buttons.Length)
-                selectedButtonIndex = 0;
-            SelectButton(selectedButtonIndex);
+            if (menu.activeSelf)
+            {
+                audioSource.clip = sonidoCambiarBoton;
+                audioSource.Play();
+                selectedButtonIndex++;
+                if (selectedButtonIndex >= buttons.Length)
+                    selectedButtonIndex = 0;
+                SelectButton(selectedButtonIndex);
+
+            }
+
         }
 
         // Acciones de los botones
         if (Input.GetKeyDown(KeyCode.J)) // Si le damos a J, cambia de escena
         {
-            menu.SetActive(false);
-            LoadSceneFromSelectedButton();
+            if (menu.activeSelf)
+            {
+                audioSource.clip = sonidoDarBoton; 
+                audioSource.Play();
+                menu.SetActive(false);
+                LoadSceneFromSelectedButton();
+
+            }
+ 
             
         }
 
         if (Input.GetKeyDown(KeyCode.K)) // Si le damos a K, volvemos al menú
         {
-            credits.SetActive(false);
-            howplay.SetActive(false);
-            StartCoroutine(ActivarMenu(1.0f));
+            if (!menu.activeSelf)
+            {
+                audioSource.clip = sonidoDarBoton;
+                audioSource.Play();
+                credits.SetActive(false);
+                howplay.SetActive(false);
+                StartCoroutine(ActivarMenu(1.0f));
+
+            }
+
 
         }
     }
