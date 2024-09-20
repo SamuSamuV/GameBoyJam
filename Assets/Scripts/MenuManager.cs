@@ -187,7 +187,10 @@ public class MenuManager : MonoBehaviour
     // Cerrar el juego
     public void QuitGame()
     {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
         Debug.Log("El juego se ha cerrado.");
         Application.Quit();
+    
     }
 }
