@@ -106,6 +106,13 @@ public class Ghost : MonoBehaviour
                     player.GetComponent<Player>().audioSourcePlayer.Play();
 
                     gM.player.gameObject.GetComponent<Player>().vidas--;
+
+                    if (gM.player.gameObject.GetComponent<Player>().vidas == 2)
+                        player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = gM.animatorControllers[1];
+
+                    if (gM.player.gameObject.GetComponent<Player>().vidas == 1)
+                        player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = gM.animatorControllers[0];
+
                     Debug.Log("Tecla incorrecta. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
                 }
             }
@@ -120,6 +127,14 @@ public class Ghost : MonoBehaviour
 
             // Cuando el tiempo se acaba y no destruyen al fantasma
             gM.player.gameObject.GetComponent<Player>().vidas--;
+
+            if (gM.player.gameObject.GetComponent<Player>().vidas == 2)
+                player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = gM.animatorControllers[1];
+
+            if (gM.player.gameObject.GetComponent<Player>().vidas == 1)
+                player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = gM.animatorControllers[0];
+
+
             Debug.Log("No destruiste al fantasma a tiempo. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
         }
 
@@ -136,8 +151,17 @@ public class Ghost : MonoBehaviour
             {
                 player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().hurtSound;
                 player.GetComponent<Player>().audioSourcePlayer.Play();
+                player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = gM.animatorControllers[0];
 
                 player.GetComponent<Player>().vidas--;
+
+                if (gM.player.gameObject.GetComponent<Player>().vidas == 2)
+                    player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = gM.animatorControllers[1];
+
+                if (gM.player.gameObject.GetComponent<Player>().vidas == 1)
+                    player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = gM.animatorControllers[0];
+
+
                 Debug.Log("No destruiste al fantasma. Te queda " + player.GetComponent<Player>().vidas + " vida.");
             }
 

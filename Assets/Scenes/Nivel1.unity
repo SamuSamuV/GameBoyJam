@@ -1988,7 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f638be216a362c49820379e1c3488af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 5
+  velocidad: 15
   animatorPlayer: {fileID: 0}
   vidas: 3
   seEnfocoFantasmaPiedra: 0
@@ -2040,7 +2040,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8, y: 2.3333333}
+    oldSize: {x: 2.4333334, y: 2.4333334}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2456,6 +2456,9 @@ MonoBehaviour:
   currentGhostSpawners: []
   player: {fileID: 0}
   playerTransform: {fileID: 0}
+  animatorControllers:
+  - {fileID: 9100000, guid: 038853a0a9b418e40bfc5fbd7ecf1b03, type: 2}
+  - {fileID: 9100000, guid: a23c2dffc68e8ae409acce866a0f8e90, type: 2}
   seTerminoPartida: 0
   contRonda: 0
   contFantasmas: 0

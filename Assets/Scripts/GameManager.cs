@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject player;
     [SerializeField] public Transform playerTransform;
 
+    [SerializeField] public RuntimeAnimatorController[] animatorControllers;
+
     public bool seTerminoPartida = false;
 
     public int contRonda;
