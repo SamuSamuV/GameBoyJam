@@ -18,11 +18,13 @@ public class WinLostManager : MonoBehaviour
     public Button[] buttons;
     public ButtonSprites[] buttonSprites;
     private int selectedButtonIndex = 0;
+    public GameObject winPanel;
+    public GameObject lostPanel;
 
     void Update()
     {
         // Navegación de botones
-        if (Input.GetKeyDown(KeyCode.W)) // Subir de botón
+        if (Input.GetKeyDown(KeyCode.W) && (winPanel.activeSelf ||lostPanel.activeSelf)) // Subir de botón
         {
             selectedButtonIndex--;
             if (selectedButtonIndex < 0)
@@ -30,7 +32,7 @@ public class WinLostManager : MonoBehaviour
             SelectButton(selectedButtonIndex);
         }
 
-        if (Input.GetKeyDown(KeyCode.S)) // Bajar de botón
+        if (Input.GetKeyDown(KeyCode.S) && (winPanel.activeSelf || lostPanel.activeSelf)) // Bajar de botón
         {
             selectedButtonIndex++;
             if (selectedButtonIndex >= buttons.Length)
@@ -39,7 +41,7 @@ public class WinLostManager : MonoBehaviour
         }
 
         // Acciones de los botones
-        if (Input.GetKeyDown(KeyCode.J)) // Si le damos a J, cambia de escena
+        if (Input.GetKeyDown(KeyCode.J) && (winPanel.activeSelf || lostPanel.activeSelf)) // Si le damos a J, cambia de escena
         {
             LoadSceneFromSelectedButton();
         }
