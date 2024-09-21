@@ -1988,7 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f638be216a362c49820379e1c3488af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 15
+  velocidad: 2
   animatorPlayer: {fileID: 0}
   vidas: 3
   seEnfocoFantasmaPiedra: 0
