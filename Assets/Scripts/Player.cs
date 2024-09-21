@@ -55,7 +55,6 @@ public class Player : MonoBehaviour
     {
         if (!seEnfocoFantasmaPiedra && !seEnfocoFantasmaTijera && !seEnfocoFantasmaPapel && !gM.seTerminoPartida)
         {
-            Movimiento();
             GirarLinterna();
         }
 
@@ -124,6 +123,8 @@ public class Player : MonoBehaviour
 
         else
         {
+            Movimiento();
+
             animatorPlayer.SetBool("MirandoArriba", false);
             animatorPlayer.SetBool("MirandoAbajo", false);
             animatorPlayer.SetBool("MirandoIzq", false);
