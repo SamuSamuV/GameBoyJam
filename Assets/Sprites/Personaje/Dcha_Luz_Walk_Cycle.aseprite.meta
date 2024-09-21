@@ -1,0 +1,835 @@
+fileFormatVersion: 2
+guid: b254b9362e43a3344a355c4bdc2f6e45
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Dcha_Luz_Walk_Cycle_Frame_0
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 73
+      height: 73
+    spriteID: a94ab4cebb6255b4d9d7be6c4421de35
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Dcha_Luz_Walk_Cycle_Frame_1
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 85
+      width: 73
+      height: 73
+    spriteID: 7d30332e4d181b00a871f2d99994b66a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 85}
+  - name: Dcha_Luz_Walk_Cycle_Frame_2
+    originalName: 
+    pivot: {x: 0.48611113, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 166
+      width: 72
+      height: 73
+    spriteID: 83bcc3cda4e4f0056869f75b1f624a94
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 166}
+  - name: Dcha_Luz_Walk_Cycle_Frame_3
+    originalName: 
+    pivot: {x: 0.48611113, y: -0.04166667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 408
+      width: 72
+      height: 72
+    spriteID: 6f14bf37ddc2ca9588c4820125373d87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 408}
+  - name: Dcha_Luz_Walk_Cycle_Frame_4
+    originalName: 
+    pivot: {x: 0.48611113, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 247
+      width: 72
+      height: 73
+    spriteID: f497e81d76d6c79ec84366bb1998cc85
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 247}
+  - name: Dcha_Luz_Walk_Cycle_Frame_5
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04166667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 328
+      width: 73
+      height: 72
+    spriteID: 6c7ca2af1ba9730ffa4197a707a95c64
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 328}
+  - name: Dcha_Luz_Walk_Cycle_Frame_6
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04166667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 408
+      width: 73
+      height: 72
+    spriteID: 9917d7ae57c93d6aca83db4119631ce7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 408}
+  - name: Dcha_Luz_Walk_Cycle_Frame_7
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04166667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 4
+      width: 73
+      height: 72
+    spriteID: 961713f7eca7b354d9458b8b5688abfc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 4}
+  - name: Dcha_Luz_Walk_Cycle_Frame_8
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 166
+      width: 73
+      height: 73
+    spriteID: 2c214fb3872f785a9a047efd0120504c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 166}
+  - name: Dcha_Luz_Walk_Cycle_Frame_9
+    originalName: 
+    pivot: {x: 0.46478873, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 247
+      y: 4
+      width: 71
+      height: 73
+    spriteID: 05a7cff55e75275caa1a17026f2388cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 247, y: 4}
+  - name: Dcha_Luz_Walk_Cycle_Frame_10
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 247
+      width: 73
+      height: 73
+    spriteID: dcffa10745340872fbcc75a810045c70
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 247}
+  - name: Dcha_Luz_Walk_Cycle_Frame_11
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.042253524}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 326
+      y: 4
+      width: 73
+      height: 71
+    spriteID: 3a33680a40e593588ac4b31b6c7d3dc9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 326, y: 4}
+  - name: Dcha_Luz_Walk_Cycle_Frame_12
+    originalName: 
+    pivot: {x: 0.47222227, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 84
+      width: 72
+      height: 73
+    spriteID: 4d4f95d05024fd24ab81ae926e7958b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 84}
+  - name: Dcha_Luz_Walk_Cycle_Frame_14
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 328
+      width: 73
+      height: 73
+    spriteID: 61938b9ee418fc1558e6b982716f6af2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 328}
+  - name: Dcha_Luz_Walk_Cycle_Frame_15
+    originalName: 
+    pivot: {x: 0.47222227, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 165
+      width: 72
+      height: 73
+    spriteID: c7a0ef70c3e361a2db49c09d507d201c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 165}
+  - name: Dcha_Luz_Walk_Cycle_Frame_16
+    originalName: 
+    pivot: {x: 0.46478873, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 247
+      y: 85
+      width: 71
+      height: 73
+    spriteID: 3b888563a97b42dafb1763013c63b57c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 247, y: 85}
+  - name: Dcha_Luz_Walk_Cycle_Frame_17
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.042857148}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 326
+      y: 83
+      width: 73
+      height: 70
+    spriteID: b8324b530cad4adb28bf8be18fb3b400
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 326, y: 83}
+  - name: Dcha_Luz_Walk_Cycle_Frame_18
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.042857148}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 326
+      y: 161
+      width: 73
+      height: 70
+    spriteID: 108e77495925e9f0f8ed126d88bacef8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 326, y: 161}
+  - name: Dcha_Luz_Walk_Cycle_Frame_19
+    originalName: 
+    pivot: {x: 0.47222227, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 246
+      width: 72
+      height: 73
+    spriteID: 49d60f4a56987095ca7fc018eecb65b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 246}
+  - name: Dcha_Luz_Walk_Cycle_Frame_20
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 409
+      width: 73
+      height: 73
+    spriteID: dd0edec448404c92787239fc7534cf11
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 409}
+  - name: Dcha_Luz_Walk_Cycle_Frame_21
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 4
+      width: 73
+      height: 73
+    spriteID: db2a4323b506ddb38b7d42d60b7c13e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 4}
+  - name: Dcha_Luz_Walk_Cycle_Frame_22
+    originalName: 
+    pivot: {x: 0.47222227, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 327
+      width: 72
+      height: 73
+    spriteID: 18fb7890259d889dc8c4a52907516428
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 327}
+  - name: Dcha_Luz_Walk_Cycle_Frame_23
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.04109589}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 85
+      width: 73
+      height: 73
+    spriteID: e09c906b4d4d4d92e81c8a96ed4b7fbd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 85}
+  - name: Dcha_Luz_Walk_Cycle_Frame_13
+    originalName: 
+    pivot: {x: 0.47945204, y: -0.19047621}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 326
+      y: 239
+      width: 73
+      height: 63
+    spriteID: 7175e432ed553bca7b15c338a045b05e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 326, y: 239}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1342058391
+    name: Dcha_Luz_Walk_Cycle
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Dcha_Luz_Walk_Cycle_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 73
+      spriteId: a94ab4cebb6255b4d9d7be6c4421de35
+    - name: Dcha_Luz_Walk_Cycle_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 73
+      spriteId: 7d30332e4d181b00a871f2d99994b66a
+    - name: Dcha_Luz_Walk_Cycle_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 72
+        height: 73
+      spriteId: 83bcc3cda4e4f0056869f75b1f624a94
+    - name: Dcha_Luz_Walk_Cycle_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 72
+        height: 72
+      spriteId: 6f14bf37ddc2ca9588c4820125373d87
+    - name: Dcha_Luz_Walk_Cycle_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 72
+        height: 73
+      spriteId: f497e81d76d6c79ec84366bb1998cc85
+    - name: Dcha_Luz_Walk_Cycle_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 72
+      spriteId: 6c7ca2af1ba9730ffa4197a707a95c64
+    - name: Dcha_Luz_Walk_Cycle_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 72
+      spriteId: 9917d7ae57c93d6aca83db4119631ce7
+    - name: Dcha_Luz_Walk_Cycle_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 72
+      spriteId: 961713f7eca7b354d9458b8b5688abfc
+    - name: Dcha_Luz_Walk_Cycle_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 73
+      spriteId: 2c214fb3872f785a9a047efd0120504c
+    - name: Dcha_Luz_Walk_Cycle_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 3
+        width: 71
+        height: 73
+      spriteId: 05a7cff55e75275caa1a17026f2388cc
+    - name: Dcha_Luz_Walk_Cycle_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 73
+      spriteId: dcffa10745340872fbcc75a810045c70
+    - name: Dcha_Luz_Walk_Cycle_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 71
+      spriteId: 3a33680a40e593588ac4b31b6c7d3dc9
+    - name: Dcha_Luz_Walk_Cycle_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 3
+        width: 72
+        height: 73
+      spriteId: 4d4f95d05024fd24ab81ae926e7958b2
+    - name: Dcha_Luz_Walk_Cycle_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 73
+      spriteId: 61938b9ee418fc1558e6b982716f6af2
+    - name: Dcha_Luz_Walk_Cycle_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 3
+        width: 72
+        height: 73
+      spriteId: c7a0ef70c3e361a2db49c09d507d201c
+    - name: Dcha_Luz_Walk_Cycle_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 3
+        width: 71
+        height: 73
+      spriteId: 3b888563a97b42dafb1763013c63b57c
+    - name: Dcha_Luz_Walk_Cycle_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 70
+      spriteId: b8324b530cad4adb28bf8be18fb3b400
+    - name: Dcha_Luz_Walk_Cycle_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 70
+      spriteId: 108e77495925e9f0f8ed126d88bacef8
+    - name: Dcha_Luz_Walk_Cycle_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 3
+        width: 72
+        height: 73
+      spriteId: 49d60f4a56987095ca7fc018eecb65b6
+    - name: Dcha_Luz_Walk_Cycle_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 73
+      spriteId: dd0edec448404c92787239fc7534cf11
+    - name: Dcha_Luz_Walk_Cycle_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 73
+      spriteId: db2a4323b506ddb38b7d42d60b7c13e9
+    - name: Dcha_Luz_Walk_Cycle_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 6
+        y: 3
+        width: 72
+        height: 73
+      spriteId: 18fb7890259d889dc8c4a52907516428
+    - name: Dcha_Luz_Walk_Cycle_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 3
+        width: 73
+        height: 73
+      spriteId: e09c906b4d4d4d92e81c8a96ed4b7fbd
+    - name: Dcha_Luz_Walk_Cycle_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 5
+        y: 12
+        width: 73
+        height: 63
+      spriteId: 7175e432ed553bca7b15c338a045b05e
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 80, y: 80}
