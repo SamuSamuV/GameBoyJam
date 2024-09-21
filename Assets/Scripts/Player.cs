@@ -76,8 +76,7 @@ public class Player : MonoBehaviour
 
     public void Movimiento()
     {
-        Vector2 movimiento = Vector2.right * velocidad * Time.deltaTime;
-        rb.MovePosition(rb.position + movimiento);
+        transform.Translate(Vector3.right * velocidad * Time.deltaTime);
     }
 
     public void GirarLinterna()
