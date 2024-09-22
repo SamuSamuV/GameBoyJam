@@ -1999,6 +1999,7 @@ MonoBehaviour:
   linternaAbajo: {fileID: 0}
   linternaIzquierda: {fileID: 0}
   gM: {fileID: 0}
+  musicBox: {fileID: 0}
   audioSourcePlayer: {fileID: 0}
   derrotaSound: {fileID: 8300000, guid: 40c7968574b9dd64796250b2dc25a686, type: 3}
   victoriaSound: {fileID: 8300000, guid: ca3cab37bfd06e846a9ca3273ada7231, type: 3}
