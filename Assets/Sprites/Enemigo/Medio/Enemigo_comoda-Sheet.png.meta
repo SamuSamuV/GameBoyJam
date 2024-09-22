@@ -1,0 +1,532 @@
+fileFormatVersion: 2
+guid: 5ba937bf3cf94b24c860a84bc4df0b9d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 1440, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051574177c2478449bee4d6c95e77cec
+      internalID: -531783181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da9970a80eb4fa44be99c28875cf1d3
+      internalID: -99875558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a391f6914894fc146a868aedee8bf466
+      internalID: -1873312362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3866f872fd5829e40b9a1e45b83dcf1b
+      internalID: -574813053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bfdb5ba581d5b4e84d6736a28a7466
+      internalID: -206219570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cca30f1c35776c498844daf54236767
+      internalID: -1732618516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3bd5a5b1fbabe4696da149ebd28e3d
+      internalID: 428841642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5cea07889ae794a97e2bcb0e93d484
+      internalID: -1505053662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7192570dab54f3f4dbeb7cdc11eacfa3
+      internalID: -1398281615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c175fba59d85e1544b656b047e5abb64
+      internalID: -249832922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5caff1a517d8f174d98b775d8cdb4ed0
+      internalID: -2030523519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f282df4da3a5a46bf33c796e2f692b
+      internalID: -1278095557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a658607329958744aa309ddd4feae16
+      internalID: 157776701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5461d0e2f6bd8c0419735fc53a6124cd
+      internalID: 592775032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c967be768c9cb4fa10570ea6e1387e
+      internalID: 1643714762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab17d4ecf203dfe40a7508c7ed27cf43
+      internalID: 950342043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9524548020cc37c44a742edb0d1b57db
+      internalID: -2033114077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e573eab91dc3e6d499f5d456ff6ac6fb
+      internalID: 1340006261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_comoda-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 80
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b329e67ed64613647989404650fa6448
+      internalID: 1004043996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Enemigo_comoda-Sheet_0: -531783181
+      Enemigo_comoda-Sheet_1: -99875558
+      Enemigo_comoda-Sheet_10: -2030523519
+      Enemigo_comoda-Sheet_11: -1278095557
+      Enemigo_comoda-Sheet_12: 157776701
+      Enemigo_comoda-Sheet_13: 592775032
+      Enemigo_comoda-Sheet_14: 1643714762
+      Enemigo_comoda-Sheet_15: 950342043
+      Enemigo_comoda-Sheet_16: -2033114077
+      Enemigo_comoda-Sheet_17: 1340006261
+      Enemigo_comoda-Sheet_18: 1004043996
+      Enemigo_comoda-Sheet_2: -1873312362
+      Enemigo_comoda-Sheet_3: -574813053
+      Enemigo_comoda-Sheet_4: -206219570
+      Enemigo_comoda-Sheet_5: -1732618516
+      Enemigo_comoda-Sheet_6: 428841642
+      Enemigo_comoda-Sheet_7: -1505053662
+      Enemigo_comoda-Sheet_8: -1398281615
+      Enemigo_comoda-Sheet_9: -249832922
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

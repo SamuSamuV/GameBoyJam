@@ -1,0 +1,532 @@
+fileFormatVersion: 2
+guid: 5923518a61c19c34f88ca6bc3b8ca42f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719ed74b9fca3db4182750464089dc19
+      internalID: 2035916331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b4b6defe4d1c9045a311c401000d6c2
+      internalID: -585612902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47b89bc7b776ec4dbd878c32064d232
+      internalID: -1279633465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7941ffdd807011846b0fcf5b13a3f61b
+      internalID: -799863156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d33afeae7e252f48b54b085bc026b07
+      internalID: -344661036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13950d5fcc1bc91429ed1204886ad298
+      internalID: -1546978133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2abe0bbc8e978544bc259401be22a22
+      internalID: -767377185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2917c234ca05d6f4783afe22992ee170
+      internalID: -2101180436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a3d48de9b1d0c4487ae2a1b23855ef
+      internalID: -1946985698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d8af3ed209a384385a37779f37456f
+      internalID: -1661221218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed02345609ac604eb47cfb02e62935d
+      internalID: 514256756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70484a072b739864d950f46bc7e5a62c
+      internalID: 1251411924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e180a74c726101241b2c039fd2087c1f
+      internalID: 86813249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e155168ab3c8f0f4086eb1d883a4bc08
+      internalID: 860091773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627d4e5ac5afdb14ba98549a497410c6
+      internalID: 1697794105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b507fe71b822c24cbff9964cdf361eb
+      internalID: -609342417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f4cd379c356a940819f445f2d90558
+      internalID: -1069079228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81b088ab12ca1d42ba44816d3d58ab1
+      internalID: -1797338136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_Suelo-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03620a738870c4b4d8f93561e5e3ddfa
+      internalID: -862002481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Enemigo_Suelo-Sheet_0: 2035916331
+      Enemigo_Suelo-Sheet_1: -585612902
+      Enemigo_Suelo-Sheet_10: 514256756
+      Enemigo_Suelo-Sheet_11: 1251411924
+      Enemigo_Suelo-Sheet_12: 86813249
+      Enemigo_Suelo-Sheet_13: 860091773
+      Enemigo_Suelo-Sheet_14: 1697794105
+      Enemigo_Suelo-Sheet_15: -609342417
+      Enemigo_Suelo-Sheet_16: -1069079228
+      Enemigo_Suelo-Sheet_17: -1797338136
+      Enemigo_Suelo-Sheet_18: -862002481
+      Enemigo_Suelo-Sheet_2: -1279633465
+      Enemigo_Suelo-Sheet_3: -799863156
+      Enemigo_Suelo-Sheet_4: -344661036
+      Enemigo_Suelo-Sheet_5: -1546978133
+      Enemigo_Suelo-Sheet_6: -767377185
+      Enemigo_Suelo-Sheet_7: -2101180436
+      Enemigo_Suelo-Sheet_8: -1946985698
+      Enemigo_Suelo-Sheet_9: -1661221218
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

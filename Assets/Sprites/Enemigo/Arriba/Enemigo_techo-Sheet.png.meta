@@ -1,0 +1,532 @@
+fileFormatVersion: 2
+guid: 067c59b76f214734c8490aa7eed11919
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 2
+  spritePivot: {x: 0.5, y: 1}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 49
+        width: 35
+        height: 14
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8359c00843cd0f428c746d9a6ca846a
+      internalID: 1835537987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 49
+        width: 35
+        height: 14
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96ba804fc5791f46aee8b3f0fa244c1
+      internalID: -1343468381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 49
+        width: 35
+        height: 14
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d64d3ac901cab44ad3d3872b2a90d5
+      internalID: -420656291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 49
+        width: 35
+        height: 14
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d227ea8672695e74bbffa531bd149ce6
+      internalID: -1397423982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 49
+        width: 35
+        height: 14
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deebad716d34e00468b5a4fd77d3c904
+      internalID: -502017754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 49
+        width: 35
+        height: 14
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b4dbdfdfc48f045894afbb860634bf
+      internalID: 1620703693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 49
+        width: 35
+        height: 14
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1476a384eec7b4fadda6e71d8a00a3
+      internalID: 342448475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 49
+        width: 35
+        height: 14
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0d72c0480f05948acc25d35b02e062
+      internalID: -2076829068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 46
+        width: 35
+        height: 17
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8a319a47aa547498941fcd7d5d8cb9
+      internalID: -429934675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 33
+        width: 35
+        height: 30
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1953ccb7f56e84eb4ba42ea46d37dd
+      internalID: -109134358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 26
+        width: 35
+        height: 37
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8bb2b03cf5c4e744a5f4e6f535faaf5
+      internalID: -180727326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 19
+        width: 35
+        height: 44
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dea03cb4a1bcc74c858879e27f324e7
+      internalID: 1803104205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 19
+        width: 35
+        height: 44
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23d8dcc617c83c4c9f4ec46627dcd21
+      internalID: -1622609243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 21
+        width: 35
+        height: 42
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a335bc783b575c04093250f21e3799fe
+      internalID: 83037656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 21
+        width: 35
+        height: 42
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7de5b6b92b0ba4b9e081bf66f718f3
+      internalID: -2076594479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 20
+        width: 35
+        height: 43
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d9043032adcc14d99ed3e6d39a434b
+      internalID: -487682196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 19
+        width: 35
+        height: 44
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05105869a8430b429bbd6a18945fd0e
+      internalID: -249327871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 12
+        width: 37
+        height: 51
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad8b44deb1ae5d43add948b369e7736
+      internalID: 1761042330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemigo_techo-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 11
+        width: 37
+        height: 52
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92fc19c0ce39b8243b016fb0d825e16a
+      internalID: -689760109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Enemigo_techo-Sheet_0: 1835537987
+      Enemigo_techo-Sheet_1: -1343468381
+      Enemigo_techo-Sheet_10: -180727326
+      Enemigo_techo-Sheet_11: 1803104205
+      Enemigo_techo-Sheet_12: -1622609243
+      Enemigo_techo-Sheet_13: 83037656
+      Enemigo_techo-Sheet_14: -2076594479
+      Enemigo_techo-Sheet_15: -487682196
+      Enemigo_techo-Sheet_16: -249327871
+      Enemigo_techo-Sheet_17: 1761042330
+      Enemigo_techo-Sheet_18: -689760109
+      Enemigo_techo-Sheet_2: -420656291
+      Enemigo_techo-Sheet_3: -1397423982
+      Enemigo_techo-Sheet_4: -502017754
+      Enemigo_techo-Sheet_5: 1620703693
+      Enemigo_techo-Sheet_6: 342448475
+      Enemigo_techo-Sheet_7: -2076829068
+      Enemigo_techo-Sheet_8: -429934675
+      Enemigo_techo-Sheet_9: -109134358
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
