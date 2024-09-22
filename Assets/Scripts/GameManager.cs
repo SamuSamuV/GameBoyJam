@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public int contRonda;
     public int contFantasmas = 0;
 
+
     private void Start()
     {
         Time.timeScale = 1;
