@@ -57,7 +57,6 @@ public class MenuManager : MonoBehaviour
                 SelectButton(selectedButtonIndex);
 
             }
-
         }
 
         if (Input.GetKeyDown(KeyCode.S)) // Bajar de botón
@@ -72,7 +71,6 @@ public class MenuManager : MonoBehaviour
                 SelectButton(selectedButtonIndex);
 
             }
-
         }
 
         // Acciones de los botones
@@ -80,14 +78,12 @@ public class MenuManager : MonoBehaviour
         {
             if (menu.activeSelf)
             {
-                audioSource.clip = sonidoDarBoton; 
+                audioSource.clip = sonidoDarBoton;
                 audioSource.Play();
                 menu.SetActive(false);
                 LoadSceneFromSelectedButton();
 
             }
- 
-            
         }
 
         if (Input.GetKeyDown(KeyCode.K)) // Si le damos a K, volvemos al menú
@@ -99,10 +95,7 @@ public class MenuManager : MonoBehaviour
                 credits.SetActive(false);
                 howplay.SetActive(false);
                 StartCoroutine(ActivarMenu(1.0f));
-
             }
-
-
         }
     }
 
@@ -133,14 +126,12 @@ public class MenuManager : MonoBehaviour
         if (selectedButtonIndex == 0) // Primer botón: Cambia de escena
         {
             var sceneChanger = buttons[selectedButtonIndex].GetComponent<SceneChanger>();
+
             if (sceneChanger != null)
-            {
                 LoadScene(sceneChanger.sceneName);
-            }
+
             else
-            {
                 Debug.LogError("El primer botón no tiene ninguna escena asignada.");
-            }
         }
         else if (selectedButtonIndex == buttons.Length - 1) // Último botón: Cierra el juego
         {
@@ -167,9 +158,7 @@ public class MenuManager : MonoBehaviour
 
         }
         else
-        {
             Debug.LogWarning("No hay objeto asignado para este botón.");
-        }
 
         IEnumerator ActivarObjeto(float delay)
         {
@@ -191,6 +180,6 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.Save();
         Debug.Log("El juego se ha cerrado.");
         Application.Quit();
-    
+
     }
 }

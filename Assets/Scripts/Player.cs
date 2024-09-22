@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] public GameObject linternaIzquierda;
 
     [SerializeField] public GameManager gM;
+    [SerializeField] public GameObject musicBox;
 
     private float tiempoUltimaPulsacionW = 0f;
     private float tiempoUltimaPulsacionS = 0f;
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
         linternaAbajo = GameObject.FindGameObjectWithTag("LinternaAbajo");
         linternaIzquierda = GameObject.FindGameObjectWithTag("LinternaIzquierda");
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        musicBox = GameObject.FindGameObjectWithTag("Music");
 
         linternaDerecha.SetActive(false);
         linternaArriba.SetActive(false);
@@ -61,8 +63,9 @@ public class Player : MonoBehaviour
         if (vidas <= 0 && !gM.seTerminoPartida)
         {
             animatorPlayer.SetBool("Muerte", true);
-            audioSourcePlayer.clip = derrotaSound;
-            audioSourcePlayer.Play();
+            musicBox.GetComponent<AudioSource>().clip = derrotaSound;
+            musicBox.GetComponent<AudioSource>().Play();
+            musicBox.GetComponent<AudioSource>().loop = false;
 
             gM.seTerminoPartida = true;
         }
