@@ -11,6 +11,6 @@ public class Spawners : MonoBehaviour
     {
         gameObject.name = nombre;
         gM = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
-        Instantiate(gM.ghost, gameObject.transform);
+        //Instantiate(gM.ghost, gameObject.transform);
     }
 }

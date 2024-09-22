@@ -141,7 +141,7 @@ public class Player : MonoBehaviour
 
     public void DestruirFantasma(GameObject fantasma)
     {
-        Destroy(fantasma);
+        fantasma.GetComponent<Ghost>().ToyMuerto();
         ResetearEnfoque();
         Debug.Log("Fantasma destruido.");
     }
