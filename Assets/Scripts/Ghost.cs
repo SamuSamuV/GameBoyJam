@@ -7,10 +7,10 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    [SerializeField] public GameManager gM; // Referencia al GM, que es el que les irá dando todo cuando spawneen.
+    [SerializeField] public GameManager gM; // Referencia al GM, que es el que les irï¿½ dando todo cuando spawneen.
 
     [SerializeField] public string tipo;        // Pueden ser Piedra, Papel o Tijera.
-    [SerializeField] public char dificultad;  // Pueden ser Fáciles, Normales o Difíciles.
+    [SerializeField] public char dificultad;  // Pueden ser Fï¿½ciles, Normales o Difï¿½ciles.
     [SerializeField] public float tiempo;       // Pueden durar 2, 3 o 5 segundos.
     [SerializeField] public Animator anim;      // Tienen diferentes animaciones dependiendo del tipo.
     [SerializeField] public GameObject papa;      // Tienen diferentes animaciones dependiendo del tipo.
@@ -96,7 +96,7 @@ public class Ghost : MonoBehaviour
 
                     gM.player.gameObject.GetComponent<Player>().DestruirFantasma(gameObject);
 
-                    // Lógica de oleadas, dependiendo de la dificultad
+                    // Lï¿½gica de oleadas, dependiendo de la dificultad
                     yield break;
                 }
 
@@ -138,7 +138,7 @@ public class Ghost : MonoBehaviour
             Debug.Log("No destruiste al fantasma a tiempo. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
         }
 
-        // Reinicia el enfoque del jugador después del temporizador
+        // Reinicia el enfoque del jugador despuï¿½s del temporizador
         gM.player.gameObject.GetComponent<Player>().ResetearEnfoque();
     }
 
@@ -166,7 +166,7 @@ public class Ghost : MonoBehaviour
             }
 
             gM.contFantasmas++;
-            Debug.Log("Entré papu");
+            Debug.Log("Entra papu");
 
             if (gM.contRonda >= 0 && gM.contRonda <= 2 && gM.contFantasmas == 2)
             {
