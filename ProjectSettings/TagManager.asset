@@ -14,6 +14,7 @@ TagManager:
   - GM
   - Fantasma
   - Music
+  - ColliderAnimFantasma
   layers:
   - Default
   - TransparentFX

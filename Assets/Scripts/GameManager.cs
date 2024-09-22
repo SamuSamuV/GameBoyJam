@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
         contRonda++;
 
         seTerminoPartida = false;
-
     }
 
     public void Reintentar()
@@ -241,13 +240,13 @@ public class GameManager : MonoBehaviour
 
         else if (handType == "Tijeras")
         {
-            //ghost.GetComponent<Animator>().SetBool("Scissors", true);
+            ghost.GetComponent<Animator>().SetBool("Scissors", true);
             ghost.transform.GetChild(0).GetComponent<Animator>().SetBool("Scissors", true);
         }
 
         else if (handType == "Papel")
         {
-            //ghost.GetComponent<Animator>().SetBool("Paper", true);
+            ghost.GetComponent<Animator>().SetBool("Paper", true);
             ghost.transform.GetChild(0).GetComponent<Animator>().SetBool("Paper", true);
         }
     }

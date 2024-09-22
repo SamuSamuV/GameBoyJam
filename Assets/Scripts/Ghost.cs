@@ -84,7 +84,6 @@ public class Ghost : MonoBehaviour
                     player.GetComponent<Player>().audioSourcePlayer.Play();
 
                     gM.player.gameObject.GetComponent<Player>().DestruirFantasma(gameObject);
-                    gM.player.gameObject.GetComponent<Player>().ResetearEnfoque();
                     yield break;
                 }
 
@@ -111,7 +110,7 @@ public class Ghost : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("ColliderAnimFantasma"))
         {
             gM.SettingHands(tipo, gameObject);
         }
