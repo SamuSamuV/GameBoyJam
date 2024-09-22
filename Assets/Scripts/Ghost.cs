@@ -15,6 +15,7 @@ public class Ghost : MonoBehaviour
     [SerializeField] public Animator anim;      // Tienen diferentes animaciones dependiendo del tipo.
     [SerializeField] public GameObject papa;      // Tienen diferentes animaciones dependiendo del tipo.
     [SerializeField] public GameObject player;
+    [SerializeField] public int contadorVecesMorido = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -120,6 +121,8 @@ public class Ghost : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Luis Rubio es tope flama");
+
             if (!player.GetComponent<Player>().seEnfocoFantasmaPapel && !player.GetComponent<Player>().seEnfocoFantasmaPiedra
                 && !player.GetComponent<Player>().seEnfocoFantasmaTijera)
             {
@@ -191,10 +194,16 @@ public class Ghost : MonoBehaviour
 
     public void ToyMuerto()
     {
-        gM.contFantasmas++;
-        gM.currentGhostSpawners.Remove(this.gameObject);
-        gM.PlayerDamage();
-        ComprobarRonda();
-        Destroy(gameObject);
+        contadorVecesMorido++;
+
+        if (contadorVecesMorido == 1)
+        {
+            Debug.Log("Luis Rubio es como el corchopan");
+            gM.contFantasmas++;
+            gM.currentGhostSpawners.Remove(this.gameObject);
+            gM.PlayerDamage();
+            ComprobarRonda();
+            Destroy(gameObject);
+        }
     }
 }
