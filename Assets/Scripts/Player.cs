@@ -63,9 +63,12 @@ public class Player : MonoBehaviour
         if (vidas <= 0 && !gM.seTerminoPartida)
         {
             animatorPlayer.SetBool("Muerte", true);
-            musicBox.GetComponent<AudioSource>().clip = derrotaSound;
-            musicBox.GetComponent<AudioSource>().Play();
-            musicBox.GetComponent<AudioSource>().loop = false;
+            musicBox.transform.GetChild(0).GetComponent<AudioSource>().clip = derrotaSound;
+            musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = false;
+            musicBox.transform.GetChild(0).GetComponent<AudioSource>().loop = false;
+            musicBox.transform.GetChild(0).GetComponent<AudioSource>().Play();
+            musicBox.transform.GetChild(1).GetComponent<AudioSource>().Stop();
+            musicBox.transform.GetChild(2).GetComponent<AudioSource>().Stop();
 
             gM.seTerminoPartida = true;
         }
@@ -152,10 +155,4 @@ public class Player : MonoBehaviour
         seEnfocoFantasmaTijera = false;
         seEnfocoFantasmaPapel = false;
     }
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Fantasma"))
-    //        gM.PlayerDamage();
-    //}
 }

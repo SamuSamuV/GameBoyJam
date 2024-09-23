@@ -27,10 +27,12 @@ public class MenuManager : MonoBehaviour
     public GameObject menu;
     public GameObject credits;
     public GameObject howplay;
+    public GameObject presentacion;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        menu.SetActive(true);
         // Verificamos que haya sprites asignados para todos los botones
         if (buttonSprites.Length != buttons.Length)
         {

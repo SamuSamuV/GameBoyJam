@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public RuntimeAnimatorController[] animatorControllers;
     [SerializeField] public Sprite[] ayuditas;
     [SerializeField] public GameObject manual;
+    [SerializeField] public GameObject musicBox;
 
     public bool seTerminoPartida = false;
 
@@ -35,6 +36,10 @@ public class GameManager : MonoBehaviour
 
         SpawnerPacks("Easy");
         contRonda++;
+
+        musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = false;
+        musicBox.transform.GetChild(1).GetComponent<AudioSource>().mute = true;
+        musicBox.transform.GetChild(2).GetComponent<AudioSource>().mute = true;
 
         seTerminoPartida = false;
     }
@@ -269,10 +274,21 @@ public class GameManager : MonoBehaviour
     public void ComprobarAnim()
     {
         if (player.gameObject.GetComponent<Player>().vidas == 2)
+        {
             player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = animatorControllers[1];
+            musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = true;
+            musicBox.transform.GetChild(1).GetComponent<AudioSource>().mute = false;
+            musicBox.transform.GetChild(2).GetComponent<AudioSource>().mute = true;
+        }
+
 
         else if (player.gameObject.GetComponent<Player>().vidas == 1)
+        {
             player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = animatorControllers[0];
+            musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = true;
+            musicBox.transform.GetChild(1).GetComponent<AudioSource>().mute = true;
+            musicBox.transform.GetChild(2).GetComponent<AudioSource>().mute = false;
+        }
 
         else
             player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = animatorControllers[2];

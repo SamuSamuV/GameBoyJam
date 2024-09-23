@@ -136,59 +136,62 @@ public class Ghost : MonoBehaviour
 
     public void ComprobarRonda()
     {
-        if (gM.contFantasmas == 2)
+        if (player.GetComponent<Player>().vidas > 0)
         {
-            if (gM.contRonda < 2)
+            if (gM.contFantasmas == 2)
             {
-                gM.contFantasmas = 0;
-                gM.contRonda++;
-                gM.SpawnerPacks("Easy");
+                if (gM.contRonda < 2)
+                {
+                    gM.contFantasmas = 0;
+                    gM.contRonda++;
+                    gM.SpawnerPacks("Easy");
+                }
+
+                else if (gM.contRonda == 2)
+                {
+                    gM.contFantasmas = 0;
+                    gM.contRonda++;
+                    gM.SpawnerPacks("Normal");
+                }
             }
 
-            else if (gM.contRonda == 2)
+            else if (gM.contFantasmas == 3)
             {
-                gM.contFantasmas = 0;
-                gM.contRonda++;
-                gM.SpawnerPacks("Normal");
-            }
-        }
+                if (gM.contRonda < 6)
+                {
+                    gM.contFantasmas = 0;
+                    gM.contRonda++;
+                    gM.SpawnerPacks("Normal");
+                }
 
-        else if (gM.contFantasmas == 3)
-        {
-            if (gM.contRonda < 6)
-            {
-                gM.contFantasmas = 0;
-                gM.contRonda++;
-                gM.SpawnerPacks("Normal");
-            }
-
-            else if (gM.contRonda == 6)
-            {
-                gM.contFantasmas = 0;
-                gM.contRonda++;
-                gM.SpawnerPacks("Hard");
-            }
-        }
-
-        else if (gM.contFantasmas == 4)
-        {
-            if (gM.contRonda < 10)
-            {
-                gM.contFantasmas = 0;
-                gM.contRonda++;
-                gM.SpawnerPacks("Hard");
+                else if (gM.contRonda == 6)
+                {
+                    gM.contFantasmas = 0;
+                    gM.contRonda++;
+                    gM.SpawnerPacks("Hard");
+                }
             }
 
-            else if (gM.contRonda == 10)
+            else if (gM.contFantasmas == 4)
             {
-                Debug.Log("GANASTE DE MANERA BIEN SABROSONAAAAAAAAAAAAAAAA");
+                if (gM.contRonda < 10)
+                {
+                    gM.contFantasmas = 0;
+                    gM.contRonda++;
+                    gM.SpawnerPacks("Hard");
+                }
 
-                player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().victoriaSound;
-                player.GetComponent<Player>().audioSourcePlayer.Play();
+                else if (gM.contRonda == 10)
+                {
+                    Debug.Log("GANASTE DE MANERA BIEN SABROSONAAAAAAAAAAAAAAAA");
 
-                gM.victoriapanel.SetActive(true);
-                Time.timeScale = 0;
-                gM.seTerminoPartida = true;
+                    player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().victoriaSound;
+                    player.GetComponent<Player>().audioSourcePlayer.Play();
+
+                    gM.victoriapanel.SetActive(true);
+                    Time.timeScale = 0;
+                    gM.seTerminoPartida = true;
+                }
             }
         }
     }
@@ -202,11 +205,15 @@ public class Ghost : MonoBehaviour
             Debug.Log("Luis Rubio es como el corchopan");
             gM.contFantasmas++;
             gM.PlayerDamage();
-            gM.currentGhostSpawners.Remove(this.gameObject);
-            player.gameObject.GetComponent<Player>().ResetearEnfoque();
-            ComprobarRonda();
-            Destroy(gameObject);
-            gM.manual.SetActive(false);
+
+            if (player.GetComponent<Player>().vidas > 0)
+            {
+                gM.currentGhostSpawners.Remove(this.gameObject);
+                player.gameObject.GetComponent<Player>().ResetearEnfoque();
+                ComprobarRonda();
+                Destroy(gameObject);
+                gM.manual.SetActive(false);
+            }
         }
     }
 }
