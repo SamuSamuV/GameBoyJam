@@ -261,12 +261,20 @@ public class GameManager : MonoBehaviour
 
         player.GetComponent<Player>().vidas--;
 
+        player.gameObject.GetComponent<Player>().ResetearEnfoque();
+
+        ComprobarAnim();
+    }
+
+    public void ComprobarAnim()
+    {
         if (player.gameObject.GetComponent<Player>().vidas == 2)
             player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = animatorControllers[1];
 
         else if (player.gameObject.GetComponent<Player>().vidas == 1)
             player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = animatorControllers[0];
 
-        player.gameObject.GetComponent<Player>().ResetearEnfoque();
+        else
+            player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = animatorControllers[2];
     }
 }

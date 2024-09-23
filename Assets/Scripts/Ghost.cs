@@ -85,13 +85,17 @@ public class Ghost : MonoBehaviour
                     player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().ghostDieSound;
                     player.GetComponent<Player>().audioSourcePlayer.Play();
 
+                    Debug.Log("Acertaste");
+
                     gM.player.gameObject.GetComponent<Player>().DestruirFantasma(gameObject);
+                    player.GetComponent<Player>().vidas++;
+                    fantasmaDestruido = true;
+                    gM.ComprobarAnim();
                     yield break;
                 }
 
                 else
                 {
-                    gM.PlayerDamage();
                     ToyMuerto();
                     Debug.Log("Tecla incorrecta. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
                 }
@@ -102,7 +106,6 @@ public class Ghost : MonoBehaviour
 
         if (tiempoRestante <= 0)
         {
-            gM.PlayerDamage();
             ToyMuerto();
             Debug.Log("No destruiste al fantasma a tiempo. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
         }
@@ -123,9 +126,8 @@ public class Ghost : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             if (!player.GetComponent<Player>().seEnfocoFantasmaPapel && !player.GetComponent<Player>().seEnfocoFantasmaPiedra
-                && !player.GetComponent<Player>().seEnfocoFantasmaTijera)
+                && !player.GetComponent<Player>().seEnfocoFantasmaTijera && !fantasmaDestruido)
             {
-                gM.PlayerDamage();
                 ToyMuerto();
                 Debug.Log("No destruiste al fantasma. Te queda " + player.GetComponent<Player>().vidas + " vida.");
             }
@@ -199,6 +201,7 @@ public class Ghost : MonoBehaviour
         {
             Debug.Log("Luis Rubio es como el corchopan");
             gM.contFantasmas++;
+            gM.PlayerDamage();
             gM.currentGhostSpawners.Remove(this.gameObject);
             player.gameObject.GetComponent<Player>().ResetearEnfoque();
             ComprobarRonda();
