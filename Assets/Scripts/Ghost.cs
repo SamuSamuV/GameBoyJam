@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
-using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ghost : MonoBehaviour
 {
@@ -191,11 +188,17 @@ public class Ghost : MonoBehaviour
                     gM.victoriapanel.SetActive(true);
                     Time.timeScale = 0;
                     gM.seTerminoPartida = true;
+                    StartCoroutine(Creditos());
                 }
             }
         }
     }
-
+    IEnumerator Creditos()
+    {
+        // Espera 2 segundos
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("CreditosFinal");
+    }
     public void ToyMuerto()
     {
         contadorVecesMorido++;
