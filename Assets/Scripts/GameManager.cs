@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Transform playerTransform;
 
     [SerializeField] public RuntimeAnimatorController[] animatorControllers;
+    [SerializeField] public Sprite[] ayuditas;
+    [SerializeField] public GameObject manual;
 
     public bool seTerminoPartida = false;
 
