@@ -282,7 +282,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        else if (player.gameObject.GetComponent<Player>().vidas == 1)
+        else if (player.gameObject.GetComponent<Player>().vidas <= 1)
         {
             player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = animatorControllers[0];
             musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = true;
@@ -290,7 +290,7 @@ public class GameManager : MonoBehaviour
             musicBox.transform.GetChild(2).GetComponent<AudioSource>().mute = false;
         }
 
-        else
+        else if (player.gameObject.GetComponent<Player>().vidas >= 3)
             player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = animatorControllers[2];
     }
 }

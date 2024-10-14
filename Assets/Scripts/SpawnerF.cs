@@ -28,30 +28,30 @@ public class SpawnerF : MonoBehaviour
         Instantiate(fantasmaSpawneado, transformSpawner.position, Quaternion.identity);
     }
 
-    public IEnumerator IniciarTemporizador(float tiempo, GameObject fantasma, KeyCode teclaDestruir)
-    {
-        Debug.Log("Temporizador iniciado. Tienes " + tiempo + " segundos para destruir el fantasma o vas a mamar.");
-        float tiempoRestante = tiempo;
+    //public IEnumerator IniciarTemporizador(float tiempo, GameObject fantasma, KeyCode teclaDestruir)
+    //{
+    //    Debug.Log("Temporizador iniciado. Tienes " + tiempo + " segundos para destruir el fantasma o vas a mamar.");
+    //    float tiempoRestante = tiempo;
 
-        while (tiempoRestante > 0 && fantasma != null)
-        {
-            tiempoRestante -= Time.deltaTime;
+    //    while (tiempoRestante > 0 && fantasma != null)
+    //    {
+    //        tiempoRestante -= Time.deltaTime;
 
-            if (Input.GetKeyDown(teclaDestruir))
-            {
-                jugador.gameObject.GetComponent<Player>().DestruirFantasma(fantasma);
-                yield break;
-            }
+    //        if (Input.GetKeyDown(teclaDestruir))
+    //        {
+    //            jugador.gameObject.GetComponent<Player>().DestruirFantasma(fantasma);
+    //            yield break;
+    //        }
 
-            yield return null;
-        }
+    //        yield return null;
+    //    }
 
-        if (tiempoRestante <= 0)
-        {
-            jugador.gameObject.GetComponent<Player>().vidas--;
-            Debug.Log("No destruiste al fantasma a tiempo. Te queda " + jugador.gameObject.GetComponent<Player>().vidas + " vida.");
-        }
+    //    if (tiempoRestante <= 0)
+    //    {
+    //        jugador.gameObject.GetComponent<Player>().vidas--;
+    //        Debug.Log("No destruiste al fantasma a tiempo. Te queda " + jugador.gameObject.GetComponent<Player>().vidas + " vida.");
+    //    }
 
-        jugador.gameObject.GetComponent<Player>().ResetearEnfoque();
-    }
+    //    jugador.gameObject.GetComponent<Player>().ResetearEnfoque();
+    //}
 }

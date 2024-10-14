@@ -13,7 +13,7 @@ public class Ghost : MonoBehaviour
     [SerializeField] public GameObject papa;      // Tienen diferentes animaciones dependiendo del tipo.
     [SerializeField] public GameObject player;
     [SerializeField] public int contadorVecesMorido = 0;
-    [SerializeField] public bool fantasmaDestruido = false;
+    [SerializeField] public bool fantasmaNoDestruido = true;
 
     // Start is called before the first frame update
     void Start()
@@ -84,9 +84,8 @@ public class Ghost : MonoBehaviour
 
                     Debug.Log("Acertaste");
 
+                    fantasmaNoDestruido = false;
                     gM.player.gameObject.GetComponent<Player>().DestruirFantasma(gameObject);
-                    player.GetComponent<Player>().vidas++;
-                    fantasmaDestruido = true;
                     gM.ComprobarAnim();
                     yield break;
                 }
@@ -122,11 +121,15 @@ public class Ghost : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (!player.GetComponent<Player>().seEnfocoFantasmaPapel && !player.GetComponent<Player>().seEnfocoFantasmaPiedra
-                && !player.GetComponent<Player>().seEnfocoFantasmaTijera && !fantasmaDestruido)
+            if (fantasmaNoDestruido)
             {
                 ToyMuerto();
+                Debug.Log("Matame por favor, son las 5 de la mañana");
                 Debug.Log("No destruiste al fantasma. Te queda " + player.GetComponent<Player>().vidas + " vida.");
+            }
+            else
+            {
+                Debug.Log("Fantasma ya destruido, no se reduce vida");
             }
         }
     }
@@ -201,22 +204,17 @@ public class Ghost : MonoBehaviour
     }
     public void ToyMuerto()
     {
-        contadorVecesMorido++;
+        Debug.Log("Luis Rubio es como el corchopan");
+        gM.contFantasmas++;
+        gM.PlayerDamage();
 
-        if (contadorVecesMorido == 1)
+        if (player.GetComponent<Player>().vidas > 0)
         {
-            Debug.Log("Luis Rubio es como el corchopan");
-            gM.contFantasmas++;
-            gM.PlayerDamage();
-
-            if (player.GetComponent<Player>().vidas > 0)
-            {
-                gM.currentGhostSpawners.Remove(this.gameObject);
-                player.gameObject.GetComponent<Player>().ResetearEnfoque();
-                ComprobarRonda();
-                Destroy(gameObject);
-                gM.manual.SetActive(false);
-            }
+            gM.currentGhostSpawners.Remove(this.gameObject);
+            player.gameObject.GetComponent<Player>().ResetearEnfoque();
+            ComprobarRonda();
+            Destroy(gameObject);
+            gM.manual.SetActive(false);
         }
     }
 }
