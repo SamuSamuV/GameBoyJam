@@ -12,6 +12,7 @@ public class Ghost : MonoBehaviour
     [SerializeField] public Animator anim;      // Tienen diferentes animaciones dependiendo del tipo.
     [SerializeField] public GameObject papa;      // Tienen diferentes animaciones dependiendo del tipo.
     [SerializeField] public GameObject player;
+    [SerializeField] public GameObject fantasmaPropio;
     [SerializeField] public int contadorVecesMorido = 0;
     [SerializeField] public bool fantasmaNoDestruido = true;
 
@@ -22,6 +23,8 @@ public class Ghost : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         gameObject.tag = "Fantasma";
         WhoAmI();
+
+        fantasmaPropio = this.gameObject;
 
         //Animator animator = gameObject.GetComponent<Animator>();
         //if (animator != null) animator = anim;
@@ -75,16 +78,18 @@ public class Ghost : MonoBehaviour
             tiempoRestante -= Time.deltaTime;
 
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S)
-                || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))
+                || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K)
+                || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow)
+                || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 if (Input.GetKeyDown(teclaDestruir))
                 {
+                    fantasmaNoDestruido = false;
                     player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().ghostDieSound;
                     player.GetComponent<Player>().audioSourcePlayer.Play();
 
                     Debug.Log("Acertaste");
 
-                    fantasmaNoDestruido = false;
                     gM.player.gameObject.GetComponent<Player>().DestruirFantasma(gameObject);
                     gM.ComprobarAnim();
                     yield break;
@@ -92,6 +97,7 @@ public class Ghost : MonoBehaviour
 
                 else
                 {
+                    fantasmaNoDestruido = false;
                     ToyMuerto();
                     Debug.Log("Tecla incorrecta. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
                 }
@@ -102,6 +108,7 @@ public class Ghost : MonoBehaviour
 
         if (tiempoRestante <= 0)
         {
+            fantasmaNoDestruido = false;
             ToyMuerto();
             Debug.Log("No destruiste al fantasma a tiempo. Te queda " + gM.player.gameObject.GetComponent<Player>().vidas + " vida.");
         }
@@ -123,85 +130,17 @@ public class Ghost : MonoBehaviour
         {
             if (fantasmaNoDestruido)
             {
-                ToyMuerto();
                 Debug.Log("Matame por favor, son las 5 de la mañana");
+                ToyMuerto();
                 Debug.Log("No destruiste al fantasma. Te queda " + player.GetComponent<Player>().vidas + " vida.");
             }
             else
             {
-                Debug.Log("Fantasma ya destruido, no se reduce vida");
+                Debug.Log("Fantasma ya destruido, no se reduce vida.");
             }
         }
     }
 
-    public void ComprobarRonda()
-    {
-        if (player.GetComponent<Player>().vidas > 0)
-        {
-            if (gM.contFantasmas == 2)
-            {
-                if (gM.contRonda < 2)
-                {
-                    gM.contFantasmas = 0;
-                    gM.contRonda++;
-                    gM.SpawnerPacks("Easy");
-                }
-
-                else if (gM.contRonda == 2)
-                {
-                    gM.contFantasmas = 0;
-                    gM.contRonda++;
-                    gM.SpawnerPacks("Normal");
-                }
-            }
-
-            else if (gM.contFantasmas == 3)
-            {
-                if (gM.contRonda < 6)
-                {
-                    gM.contFantasmas = 0;
-                    gM.contRonda++;
-                    gM.SpawnerPacks("Normal");
-                }
-
-                else if (gM.contRonda == 6)
-                {
-                    gM.contFantasmas = 0;
-                    gM.contRonda++;
-                    gM.SpawnerPacks("Hard");
-                }
-            }
-
-            else if (gM.contFantasmas == 4)
-            {
-                if (gM.contRonda < 10)
-                {
-                    gM.contFantasmas = 0;
-                    gM.contRonda++;
-                    gM.SpawnerPacks("Hard");
-                }
-
-                else if (gM.contRonda == 10)
-                {
-                    Debug.Log("GANASTE DE MANERA BIEN SABROSONAAAAAAAAAAAAAAAA");
-
-                    player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().victoriaSound;
-                    player.GetComponent<Player>().audioSourcePlayer.Play();
-
-                    gM.victoriapanel.SetActive(true);
-                    Time.timeScale = 0;
-                    gM.seTerminoPartida = true;
-                    StartCoroutine(Creditos());
-                }
-            }
-        }
-    }
-    IEnumerator Creditos()
-    {
-        // Espera 2 segundos
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("CreditosFinal");
-    }
     public void ToyMuerto()
     {
         Debug.Log("Luis Rubio es como el corchopan");
@@ -212,7 +151,7 @@ public class Ghost : MonoBehaviour
         {
             gM.currentGhostSpawners.Remove(this.gameObject);
             player.gameObject.GetComponent<Player>().ResetearEnfoque();
-            ComprobarRonda();
+            gM.ComprobarRonda();
             Destroy(gameObject);
             gM.manual.SetActive(false);
         }

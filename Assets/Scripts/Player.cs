@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
 
     public void GirarLinterna()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             animatorPlayer.SetBool("MirandoArriba", true);
             animatorPlayer.SetBool("MirandoAbajo", false);
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
             linternaIzquierda.SetActive(false);
         }
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             animatorPlayer.SetBool("MirandoArriba", false);
             animatorPlayer.SetBool("MirandoAbajo", true);
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
             linternaIzquierda.SetActive(false);
         }
 
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             animatorPlayer.SetBool("MirandoArriba", false);
             animatorPlayer.SetBool("MirandoAbajo", false);
@@ -144,8 +144,14 @@ public class Player : MonoBehaviour
 
     public void DestruirFantasma(GameObject fantasma)
     {
-        fantasma.GetComponent<Ghost>().ToyMuerto();
+        gM.contFantasmas++;
+        gM.currentGhostSpawners.Remove(this.gameObject);
+        gM.ComprobarRonda();
+        gM.manual.SetActive(false);
+
         ResetearEnfoque();
+
+        Destroy(fantasma);
         Debug.Log("Fantasma destruido.");
     }
 

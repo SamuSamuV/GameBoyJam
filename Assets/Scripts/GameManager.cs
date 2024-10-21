@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
         playerTransform = player.GetComponent<Transform>().transform;
 
         SpawnerPacks("Easy");
-        contRonda++;
 
         musicBox.transform.GetChild(0).GetComponent<AudioSource>().mute = false;
         musicBox.transform.GetChild(1).GetComponent<AudioSource>().mute = true;
@@ -172,8 +171,12 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < currentGhostSpawners.Count; i++)
         {
-            currentGhostSpawners[i].GetComponent<Ghost>().gameObject.name += difficulty;
+            if (currentGhostSpawners[i] != null) // Verifica si el GameObject aún existe
+            {
+                currentGhostSpawners[i].GetComponent<Ghost>().gameObject.name += difficulty;
+            }
         }
+
     }
 
     public GameObject GhostSpawnersCreation(string tipo, int orden, string direccion)
@@ -292,5 +295,75 @@ public class GameManager : MonoBehaviour
 
         else if (player.gameObject.GetComponent<Player>().vidas >= 3)
             player.GetComponent<Player>().animatorPlayer.runtimeAnimatorController = animatorControllers[2];
+    }
+
+    public void ComprobarRonda()
+    {
+        if (player.GetComponent<Player>().vidas > 0)
+        {
+            if (contFantasmas == 2)
+            {
+                if (contRonda < 2)
+                {
+                    contFantasmas = 0;
+                    contRonda++;
+                    SpawnerPacks("Easy");
+                }
+
+                else if (contRonda == 2)
+                {
+                    contFantasmas = 0;
+                    contRonda++;
+                    SpawnerPacks("Normal");
+                }
+            }
+
+            else if (contFantasmas == 3)
+            {
+                if (contRonda < 6)
+                {
+                    contFantasmas = 0;
+                    contRonda++;
+                    SpawnerPacks("Normal");
+                }
+
+                else if (contRonda == 6)
+                {
+                    contFantasmas = 0;
+                    contRonda++;
+                    SpawnerPacks("Hard");
+                }
+            }
+
+            else if (contFantasmas == 4)
+            {
+                if (contRonda < 10)
+                {
+                    contFantasmas = 0;
+                    contRonda++;
+                    SpawnerPacks("Hard");
+                }
+
+                else if (contRonda == 10)
+                {
+                    Debug.Log("GANASTE DE MANERA BIEN SABROSONAAAAAAAAAAAAAAAA");
+
+                    player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().victoriaSound;
+                    player.GetComponent<Player>().audioSourcePlayer.Play();
+
+                    victoriapanel.SetActive(true);
+                    Time.timeScale = 0;
+                    seTerminoPartida = true;
+                    StartCoroutine(Creditos());
+                }
+            }
+        }
+    }
+
+    public IEnumerator Creditos()
+    {
+        // Espera 2 segundos
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("CreditosFinal");
     }
 }
