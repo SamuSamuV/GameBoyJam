@@ -337,14 +337,14 @@ public class GameManager : MonoBehaviour
 
             else if (contFantasmas == 4)
             {
-                if (contRonda < 10)
+                if (contRonda < 9)
                 {
                     contFantasmas = 0;
                     contRonda++;
                     SpawnerPacks("Hard");
                 }
 
-                else if (contRonda == 10)
+                else if (contRonda >= 9)
                 {
                     Debug.Log("GANASTE DE MANERA BIEN SABROSONAAAAAAAAAAAAAAAA");
 

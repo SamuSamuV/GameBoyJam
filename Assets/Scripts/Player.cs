@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
 
     public void GirarLinterna()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             animatorPlayer.SetBool("MirandoArriba", true);
             animatorPlayer.SetBool("MirandoAbajo", false);
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
             linternaIzquierda.SetActive(false);
         }
 
-        else if (Input.GetKey(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             animatorPlayer.SetBool("MirandoArriba", false);
             animatorPlayer.SetBool("MirandoAbajo", true);
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
             linternaIzquierda.SetActive(false);
         }
 
-        else if (Input.GetKey(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             animatorPlayer.SetBool("MirandoArriba", false);
             animatorPlayer.SetBool("MirandoAbajo", false);

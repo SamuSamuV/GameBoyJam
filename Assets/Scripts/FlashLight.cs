@@ -23,14 +23,13 @@ public class FlashLight : MonoBehaviour
             Debug.Log("Presiona de nuevo la dirección a donde estás mirando para destruir el fantasma.");
 
             if (collision.gameObject.name.Contains("Up"))
-                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.W));
-
+                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.UpArrow));
 
             else if (collision.gameObject.name.Contains("Left"))
-                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.A));
+                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.LeftArrow));
 
             else if (collision.gameObject.name.Contains("Down"))
-                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.S));
+                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.DownArrow));
         }
 
         else if (collision.gameObject.name.Contains("Paper"))
