@@ -24,7 +24,7 @@ public class WinLostManager : MonoBehaviour
     void Update()
     {
         // Navegación de botones
-        if (Input.GetKeyDown(KeyCode.A) && (winPanel.activeSelf || lostPanel.activeSelf)) // Subir de botón
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) && (winPanel.activeSelf || lostPanel.activeSelf)) // Subir de botón
         {
             selectedButtonIndex--;
             if (selectedButtonIndex < 0)
@@ -32,7 +32,7 @@ public class WinLostManager : MonoBehaviour
             SelectButton(selectedButtonIndex);
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && (winPanel.activeSelf || lostPanel.activeSelf)) // Bajar de botón
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) && (winPanel.activeSelf || lostPanel.activeSelf)) // Bajar de botón
         {
             selectedButtonIndex++;
             if (selectedButtonIndex >= buttons.Length)

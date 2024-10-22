@@ -68,7 +68,7 @@ public class Ghost : MonoBehaviour
         }
     }
 
-    public IEnumerator IniciarTemporizador(KeyCode teclaDestruir)
+    public IEnumerator IniciarTemporizador(KeyCode teclaDestruir1, KeyCode teclaDestruir2)
     {
         Debug.Log("Temporizador iniciado. Tienes " + tiempo + " segundos para destruirme o valiste");
         float tiempoRestante = tiempo;
@@ -77,11 +77,12 @@ public class Ghost : MonoBehaviour
         {
             tiempoRestante -= Time.deltaTime;
 
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K)
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)
+                || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K)
                 || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow)
                 || Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if (Input.GetKeyDown(teclaDestruir))
+                if (Input.GetKeyDown(teclaDestruir1) || Input.GetKeyDown(teclaDestruir2))
                 {
                     fantasmaNoDestruido = false;
                     player.GetComponent<Player>().audioSourcePlayer.clip = player.GetComponent<Player>().ghostDieSound;

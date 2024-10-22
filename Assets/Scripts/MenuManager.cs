@@ -47,7 +47,7 @@ public class MenuManager : MonoBehaviour
     void Update()
     {
         // Navegación de botones
-        if (Input.GetKeyDown(KeyCode.W)) // Subir de botón
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) // Subir de botón
         {
             if (menu.activeSelf)
             {
@@ -61,7 +61,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S)) // Bajar de botón
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) // Bajar de botón
         {
             if (menu.activeSelf)
             {

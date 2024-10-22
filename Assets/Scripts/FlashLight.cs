@@ -23,13 +23,13 @@ public class FlashLight : MonoBehaviour
             Debug.Log("Presiona de nuevo la dirección a donde estás mirando para destruir el fantasma.");
 
             if (collision.gameObject.name.Contains("Up"))
-                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.UpArrow));
+                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.UpArrow, KeyCode.W));
 
             else if (collision.gameObject.name.Contains("Left"))
-                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.LeftArrow));
+                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.LeftArrow, KeyCode.A));
 
             else if (collision.gameObject.name.Contains("Down"))
-                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.DownArrow));
+                StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.DownArrow, KeyCode.S));
         }
 
         else if (collision.gameObject.name.Contains("Paper"))
@@ -37,7 +37,7 @@ public class FlashLight : MonoBehaviour
             player.seEnfocoFantasmaPapel = true;
 
             Debug.Log("Presiona J para destruir el fantasma.");
-            StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.J));
+            StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.J, KeyCode.J));
         }
 
         else if (collision.gameObject.name.Contains("Scissors"))
@@ -45,7 +45,7 @@ public class FlashLight : MonoBehaviour
             player.seEnfocoFantasmaTijera = true;
 
             Debug.Log("Presiona K para destruir el fantasma.");
-            StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.K));
+            StartCoroutine(collision.GetComponent<Ghost>().IniciarTemporizador(KeyCode.K, KeyCode.K));
         }
 
         EreToto(collision);
